@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>WHITE DONUTS</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../css/main.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+
+<div>
+  <!-- 네비게이션 바 -->
+  <nav class="navbar navbar-light bg-light fixed-top">
+    <div class="container-fluid d-flex flex-nowrap align-items-center justify-content-between">
+      <!-- 왼쪽: 로고 + 토글버튼 -->
+      <div class="d-flex align-items-center flex-shrink-0 me-2">
+        <button class="navbar-toggler me-2" type="button" id="toggleSidebar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand mb-0" onclick="location.reload()">
+          <img src="../img/logo.png" alt="Logo" style="height: 50px;">
+        </a>
+      </div>
+      <!-- 가운데: 검색창 -->
+      <div class="search-bar input-group flex-grow-1 mx-2">
+        <input type="search" class="form-control" placeholder="검색" aria-describedby="button-addon2">
+        <button class="search-btn btn btn-outline-secondary" type="button" id="button-addon2">
+          <img src="../img/search.png">
+        </button>
+      </div>
+      <!-- 오른쪽: 버튼들 -->
+      <div class="d-flex align-items-center flex-shrink-0" style="gap: 8px; white-space: nowrap;">
+        <button class="maid-btn" type="button" style="width: 100px; ">+ 만들기</button>
+        <button class="btn btn-light position-relative" type="button">
+          <img src="../img/alarm.png" alt="알림">
+          <span class="position-absolute top-0 start-60 translate-middle badge rounded-pill bg-danger">
+            10<span class="visually-hidden">unread messages</span>
+          </span>
+        </button>
+        <button class="btn btn-primary" type="button">A</button>
+      </div>
+    </div>
+  </nav>
+</div>
+<!-- 슬라이드 사이드바 -->
+<div class="sidebar-slide" id="sidebarMenu">
+  <ul class="nav flex-column">
+    <li class="nav-item sidebar-slide-item"><a class="navbar-brand" onclick="location.reload()"><img src="../img/home.png"> 홈</a></li>
+    <li class="nav-item sidebar-slide-item"><a class="navbar-brand" href="#"><img src="../img/shorts.png"> Shorts</a></li>
+    <li class="nav-item sidebar-slide-item"><a class="navbar-brand" href="feed.html"><img src="../img/video.png"> 구독</a></li>
+    <li class="nav-item sidebar-slide-item"><a class="navbar-brand" href="#"><img src="../img/my.png"> 내 페이지</a></li>
+    <li class="nav-item sidebar-slide-item"><a class="navbar-brand" href="#"><img src="../img/history.png"> 시청기록</a></li>
+  </ul>
+</div>
+
+<div class="d-flex" style="margin-top: 56px;">
+  <div class="row">
+    <!-- 왼쪽 사이드바 -->
+    <div class="main-navbar">
+      <a class="main-navbar-item" onclick="location.reload()"><img src="../img/home.png"><br>홈</a>
+      <a class="main-navbar-item" href="#"><img src="../img/shorts.png"><br>Shorts</a>
+      <a class="main-navbar-item" href="feed.html"><img src="../img/video.png"><br>구독</a>
+      <a class="main-navbar-item" href="#"><img src="../img/my.png"><br>내 페이지</a>
+    </div>
+
+      <!-- 영상 썸네일 카드 영역 카드 8개 이상 -->
+      <div class="main-video">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <div class="card col">
+            <a href="https://youtu.be/DdVvgfx-8mE?feature=shared" class="border-light mb-3">
+              <img src="https://img.youtube.com/vi/DdVvgfx-8mE/mqdefault.jpg" class="card-img-top">
+              <div class="card-body">
+                <h5 class="card-title">잠은 오는데 놀고는 싶은 개냥이_도비</h5>
+                <p class="card-text">dory</p>
+                <p class="card-text">조회수 94회</p>
+              </div>
+            </a>
+          </div>
+          <div class="card col">
+            <a href="https://youtu.be/c8GjsrBjUZU?feature=shared" class="border-light mb-3">
+              <img src="https://img.youtube.com/vi/c8GjsrBjUZU/mqdefault.jpg" class="card-img-top">
+              <div class="card-body">
+                <h5 class="card-title">드라마 속 재벌남과 억척녀가 계약연애할 때 클리셰 특징</h5>
+                <p class="card-text">엄은향</p>
+                <p class="card-text">조회수 125만회</p>
+              </div>
+            </a>
+          </div>
+          <div class="card col">
+            <a href="https://youtu.be/_xOnGP_Js1A?feature=shared" class="border-light mb-3">
+              <img src="https://img.youtube.com/vi/_xOnGP_Js1A/mqdefault.jpg" class="card-img-top">
+              <div class="card-body">
+                <h5 class="card-title">[#WSWF] 메가 크루 미션 글로벌 대중 평가 | BUMSUP(범접)</h5>
+                <p class="card-text">The CHOOM</p>
+                <p class="card-text">조회수 1569만회</p>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <div class="card col">
+            <a href="https://youtu.be/AuaABDWFs_8?feature=shared" class="border-light mb-3">
+              <img src="https://img.youtube.com/vi/AuaABDWFs_8/mqdefault.jpg" class="card-img-top">
+              <div class="card-body">
+                <h5 class="card-title">
+                  GOLDEN Covered by IVE ANYUJIN</h5>
+                <p class="card-text">IVE</p>
+                <p class="card-text">조회수 264만회</p>
+              </div>
+            </a>
+          </div>
+          <div class="card col">
+            <a href="https://youtu.be/ruAa6lkEZhg?feature=shared" class="border-light mb-3">
+              <img src="https://img.youtube.com/vi/ruAa6lkEZhg/mqdefault.jpg" class="card-img-top">
+              <div class="card-body">
+                <h5 class="card-title">행복해요</h5>
+                <p class="card-text">띱 Deep</p>
+                <p class="card-text">조회수 161만회</p>
+              </div>
+            </a>
+          </div>
+          <div class="card col">
+            <a href="https://youtu.be/HaYNqWBaanI?feature=shared" class="border-light mb-3">
+              <img src="https://img.youtube.com/vi/HaYNqWBaanI/mqdefault.jpg" class="card-img-top">
+              <div class="card-body">
+                <h5 class="card-title">응 너 127년 꼬우면 항소해</h5>
+                <p class="card-text">너덜트</p>
+                <p class="card-text">조회수 326만회</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+</div>
+<script src="../js/main.js"></script>
+</body>
+</html>
