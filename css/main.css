@@ -1,83 +1,105 @@
+/* ===== 전체 페이지 스크롤 및 부드러운 이동 설정 ===== */
+html, body {
+  overflow-x: hidden;
+}
+
+body.modal-open {
+  padding-right: 0 !important;
+}
+
+.modal-open .fixed-top {
+  padding-right: 0 !important;
+}
+
+.modal-backdrop {
+  display: none;
+}
+
+/* 스크롤 위치 보정 (navbar 높이만큼 여백 추가) */
+#section1 {
+  scroll-margin-top: 80px;
+}
+
 .sidebar-slide {
   position: fixed;
-  top: 68px; /* navbar 높이 */
-  left: -250px;
-  width: 200px;
+  left: -280px;
+  width: 280px;
   height: 100%;
   background-color: #f8f9fa;
   overflow-y: auto;
   transition: left 0.3s ease;
-  z-index: 999;
+  z-index: 1050;
   padding: 1rem 0;
 }
 
 .sidebar-slide.active {
   left: 0;
-  list-style: none; /* 불릿 제거 */
-  padding: 0;
   margin: 0;
 }
 
+/* 사이드 메뉴 항목 */
 .sidebar-slide-item {
-  display: inline-block;
-  vertical-align: middle;
   height: 50px;
-  margin: 5px;
+  display: flex;
+  align-items: center;
+  vertical-align: middle;
+  padding: 0 1rem;
 }
 
 .sidebar-slide-item:hover {
   background: #d3d3d3;
   border-radius: 10px;
-  width: 240px;
+  margin: 0 5px 0 5px;
 }
 
-.search-bar {
-  max-width: 500px;
-  min-width: 150px;
-}
-
-.search-bar input{
-  border-radius: 40px 0 0 40px;
-}
-
-.search-btn {
-  background-color: #f8f8f8;
-  border: 1px solid #d3d3d3;
-  border-radius: 0 40px 40px 0;
-  width: 60px;
-  height: 50px;
-}
-
-.maid-btn{
-  background-color: #f8f8f8;
-  border: 1px solid #d3d3d3;
-  border-radius: 40px;
-  height: 50px;
-}
-.no-underline {
-  text-decoration: none;
-}
-
-.main-video{
+.sidebar-overlay {
   position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* 반투명 검정 */
+  transition: left 0.3s ease;
+  z-index: 1049; /* 사이드바 바로 아래 */
+  display: none;
+}
+.sidebar-overlay.active {
+  display: block;
 }
 
-.card {
+.sidebar-close-btn {
+  background: none;
   border: none;
-  border-radius: 10px;
-  transition: transform 0.3s ease;
+  padding: 0;
+  cursor: pointer;
+  margin-left: 20px;
+
 }
-.card:hover {
-  transform: scale(1.01);
+.sidebar-close-btn:hover {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background: #d3d3d3;
+  border-radius: 40px;
 }
 
+.sidebar-close-btn .toggler-icon {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.5%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+
+/* 메인 네비게이션 바 */
 .main-navbar {
   position: fixed;
-  top: 68px; /* 네비게이션바 아래 */
+  top: 68px; /* navbar 아래 */
   left: 0;
   width: 80px;
-  height: calc(100vh - 56px);
+  height: calc(100vh - 56px); /* 화면 높이 - navbar 높이 */
   background-color: #f8f9fa;
   transition: left 0.3s ease;
   padding: 1rem 0;
@@ -92,7 +114,6 @@
   color: black;
   text-decoration: none;
   font-size: 0.9rem;
-  height: 70px;
 }
 
 .main-navbar-item:hover {
@@ -101,14 +122,83 @@
   width: 70px;
 }
 
+/* 메인 콘텐츠 영역 */
 .main-video {
   margin-top: 10px;
-  margin-left: 100px; /* 사이드바 너비만큼 띄움 */
+  margin-left: 100px; /* 사이드바 너비 */
   padding: 1rem;
   width: calc(100% - 100px);
+  overflow-y: auto;
+  overflow-x: hidden; /* 가로 스크롤 제거 */
+  box-sizing: border-box;
 }
 
+/* 메인 콘텐츠 링크 */
 .main-video a {
   color: #222222;
-  text-decoration: none; /* 밑줄 제거 */
+  text-decoration: none;
+}
+
+/* ===== UI 컴포넌트 ===== */
+
+/* 카드 스타일 */
+.card {
+  border: none;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.01);
+}
+
+/* ===== 입력창 / 버튼 ===== */
+
+/* 검색 바 */
+.search-bar {
+  max-width: 500px;
+  min-width: 150px;
+}
+
+.search-bar input {
+  border-radius: 40px 0 0 40px;
+}
+
+/* 검색 버튼 */
+.search-btn {
+  background-color: #f8f8f8;
+  border: 1px solid #d3d3d3;
+  border-radius: 0 40px 40px 0;
+  width: 60px;
+  height: 50px;
+}
+
+/* 기타 버튼 (maid-btn) */
+.maid-btn {
+  background-color: #f8f8f8;
+  border: 1px solid #d3d3d3;
+  border-radius: 40px;
+  height: 50px;
+}
+
+/* ===== 유틸 클래스 ===== */
+
+/* 밑줄 제거 */
+.no-underline {
+  text-decoration: none;
+}
+
+.menu-line{
+  border-top:1px solid #d3d3d3;
+  padding-top: 10px;
+}
+
+.menu-inline{
+  border-top:1px solid #d3d3d3;
+  padding-top: 10px;
+  margin-top: 10px;
+}
+
+.button-img{
+  margin-right: 20px;
 }
