@@ -1,6 +1,7 @@
 /* ===== 전체 페이지 스크롤 및 부드러운 이동 설정 ===== */
 html, body {
   overflow-x: hidden;
+
 }
 
 body.modal-open {
@@ -15,6 +16,10 @@ body.modal-open {
   display: none;
 }
 
+.modal-header{
+  align-items:start;
+}
+
 /* 스크롤 위치 보정 (navbar 높이만큼 여백 추가) */
 #section1 {
   scroll-margin-top: 80px;
@@ -26,7 +31,6 @@ body.modal-open {
   width: 280px;
   height: 100%;
   background-color: #f8f9fa;
-  overflow-y: auto;
   transition: left 0.3s ease;
   z-index: 1050;
   padding: 1rem 0;
@@ -37,6 +41,15 @@ body.modal-open {
   margin: 0;
 }
 
+.sidebar-slide-logo{
+  overflow: hidden; /* 로고 영역 스크롤바 숨김 */
+}
+
+.sidebar-slide-content{
+  height: calc(100vh - 70px); /* 화면 높이 - navbar 높이 */
+  overflow-y: auto;
+}
+
 /* 사이드 메뉴 항목 */
 .sidebar-slide-item {
   height: 50px;
@@ -44,6 +57,7 @@ body.modal-open {
   align-items: center;
   vertical-align: middle;
   padding: 0 1rem;
+  margin: 0 5px 0 5px;
 }
 
 .sidebar-slide-item:hover {
@@ -72,22 +86,19 @@ body.modal-open {
   border: none;
   padding: 0;
   cursor: pointer;
-  margin-left: 20px;
-
+  width: 45px;  /* 고정 너비 */
+  height: 45px; /* 고정 높이 */
 }
 .sidebar-close-btn:hover {
   display: inline-block;
-  width: 40px;
-  height: 40px;
+  width: 45px;
+  height: 45px;
   background: #d3d3d3;
-  border-radius: 40px;
+  border-radius: 50%;
 }
 
 .sidebar-close-btn .toggler-icon {
   display: inline-block;
-  width: 30px;
-  height: 30px;
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.5%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100% 100%;
@@ -96,7 +107,7 @@ body.modal-open {
 /* 메인 네비게이션 바 */
 .main-navbar {
   position: fixed;
-  top: 68px; /* navbar 아래 */
+  top: 60px; /* navbar 아래 */
   left: 0;
   width: 80px;
   height: calc(100vh - 56px); /* 화면 높이 - navbar 높이 */
@@ -114,17 +125,19 @@ body.modal-open {
   color: black;
   text-decoration: none;
   font-size: 0.9rem;
+  height: 80px;
+  padding-top: 10px
 }
 
 .main-navbar-item:hover {
   background: #d3d3d3;
   border-radius: 10px;
   width: 70px;
+  height: 80px;
 }
 
 /* 메인 콘텐츠 영역 */
 .main-video {
-  margin-top: 10px;
   margin-left: 100px; /* 사이드바 너비 */
   padding: 1rem;
   width: calc(100% - 100px);
@@ -152,6 +165,22 @@ body.modal-open {
   transform: scale(1.01);
 }
 
+.card-title {
+  font-family: "Roboto","Arial",sans-serif;
+}
+.card-text{
+  font-family: "Roboto","Arial",sans-serif;
+  margin: 0;
+  color: #909090;
+}
+
+.card-icon{
+  border-radius: 50%;
+  width: 40px;
+  background: none;
+  border: none;
+}
+
 /* ===== 입력창 / 버튼 ===== */
 
 /* 검색 바 */
@@ -169,16 +198,21 @@ body.modal-open {
   background-color: #f8f8f8;
   border: 1px solid #d3d3d3;
   border-radius: 0 40px 40px 0;
-  width: 60px;
-  height: 50px;
 }
 
 /* 기타 버튼 (maid-btn) */
-.maid-btn {
+.make-btn {
   background-color: #f8f8f8;
   border: 1px solid #d3d3d3;
   border-radius: 40px;
-  height: 50px;
+  height: 40px;
+  text-align: center;
+}
+
+.make-btn:hover {
+  background-color: #d3d3d3;
+  border-radius: 40px;
+  height: 40px;
 }
 
 /* ===== 유틸 클래스 ===== */

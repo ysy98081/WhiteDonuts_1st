@@ -14,126 +14,326 @@
   <nav class="navbar navbar-light bg-light fixed-top">
     <div class="container-fluid d-flex flex-nowrap align-items-center justify-content-between">
       <!-- 왼쪽: 로고 + 토글버튼 -->
-      <div class="d-flex align-items-center flex-shrink-0 me-2">
-        <button class="navbar-toggler me-2" type="button" id="toggleSidebar">
-          <span class="navbar-toggler-icon"></span>
+      <div class="d-flex align-items-center flex-shrink-0">
+        <button class="sidebar-close-btn" type="button" id="toggleSidebar">
+          <span class="toggler-icon"><img src="../img/menu.png" alt="" style="height: 35px;"></span>
         </button>
-        <a class="navbar-brand mb-0" href="main.html">
-          <img src="../img/logo.png" alt="Logo" style="height: 50px;">
+        <a class="navbar-brand mb-0" href="#section1">
+          <img src="../img/logo.png" alt="Logo" style="height: 30px;">
         </a>
       </div>
-      <!-- 가운데: 검색창 -->
-      <div class="search-bar input-group flex-grow-1 mx-2">
-        <input type="search" class="form-control" placeholder="검색" aria-describedby="button-addon2">
-        <button class="search-btn btn btn-outline-secondary" type="button" id="button-addon2">
-          <img src="../img/search.png">
+      <div class="d-flex align-items-center flex-shrink-0">
+        <!-- 가운데: 검색창 -->
+        <div class="search-bar input-group mx-3">
+          <input type="search" class="form-control" placeholder="검색" aria-describedby="button-addon2">
+          <button class="search-btn btn btn-outline-secondary" type="button" id="button-addon2" title="검색">
+            <img src="../img/search.png" alt="">
+          </button>
+        </div>
+        <button class="make-btn" type="button" title="음성으로 검색">
+          <img src="../img/mic.png" alt="">
         </button>
       </div>
+
       <!-- 오른쪽: 버튼들 -->
-      <div class="d-flex align-items-center flex-shrink-0" style="gap: 8px; white-space: nowrap;">
-        <button class="maid-btn" type="button" style="width: 100px; ">+ 만들기</button>
-        <button class="btn btn-light position-relative" type="button">
+      <div class="d-flex align-items-center flex-shrink-0 " style="gap: 8px; white-space: nowrap;">
+        <button class="d-flex align-items-center justify-content-center make-btn" type="button" style="width: 100px;">
+          <img src="../img/add.png" alt="">만들기</button>
+        <button class="sidebar-close-btn" type="button" title="알림">
           <img src="../img/alarm.png" alt="알림">
-          <span class="position-absolute top-0 start-80 translate-middle badge rounded-pill bg-danger">
+          <span class="position-absolute top-40 start-60 translate-middle badge rounded-pill bg-danger">
             10<span class="visually-hidden">unread messages</span>
           </span>
         </button>
-        <button class="btn btn-primary" type="button">A</button>
+        <button class="card-icon" type="button" data-bs-toggle="modal" data-bs-target="#userInfoModal">
+          <img class="card-icon" src="../img/dory.jpg">
+        </button>
       </div>
     </div>
   </nav>
 </div>
 <!-- 슬라이드 사이드바 -->
 <div class="sidebar-slide" id="sidebarMenu">
-  <ul class="nav flex-column">
-    <li class="nav-item sidebar-slide-item"><a class="navbar-brand" href="main.html"><img src="../img/home.png"> 홈</a></li>
-    <li class="nav-item sidebar-slide-item"><a class="navbar-brand" href="#"><img src="../img/shorts.png"> Shorts</a></li>
-    <li class="nav-item sidebar-slide-item"><a class="navbar-brand" onclick="location.reload()"><img src="../img/video.png"> 구독</a></li>
-    <li class="nav-item sidebar-slide-item"><a class="navbar-brand" href="#"><img src="../img/my.png"> 내 페이지</a></li>
-    <li class="nav-item sidebar-slide-item"><a class="navbar-brand" href="#"><img src="../img/history.png"> 시청기록</a></li>
-  </ul>
+  <div class="sidebar-slide-logo">
+    <ul class="nav flex-column">
+      <li class="nav-item d-flex align-items-center px-2">
+        <button type="button" id="closeSidebarBtn" class="sidebar-close-btn">
+          <span class="toggler-icon"><img src="../img/menu.png" alt="" style="height: 35px;"></span>
+        </button>
+        <a class="navbar-brand mb-0" href="main.html">
+          <img src="../img/logo.png" alt="Logo" style="height: 30px;">
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="sidebar-slide-content">
+    <ul class="nav flex-column">
+      <li class="nav-item sidebar-slide-item"><a class="navbar-brand" href="main.html" title="홈">
+        <img class="button-img" src="../img/home.png">홈</a></li>
+      <li class="nav-item sidebar-slide-item"><a class="navbar-brand" href="#" title="Shorts">
+        <img class="button-img" src="../img/shorts.png" alt="Shorts">Shorts</a>
+      </li>
+      <li class="nav-item sidebar-slide-item"><a class="navbar-brand" href="feed.html" title="구독">
+        <img class="button-img" src="../img/subscriptions.png" alt="구독">구독</a>
+      </li>
+    </ul>
+    <ul class="nav flex-column menu-inline">
+      <li class="nav-item sidebar-slide-item fw-bold"><a class="navbar-brand" href="#" title="내 페이지">내 페이지 <img src="../img/chevron_right.png"></a></li>
+      <li class="nav-item sidebar-slide-item"><a class="navbar-brand" href="#" title="시청기록">
+        <img class="button-img" src="../img/history.png" alt="시청기록">시청기록</a></li>
+      <li class="nav-item sidebar-slide-item"><a class="navbar-brand" href="#" title="재생목록">
+        <img class="button-img" src="../img/playlist.png" alt="재생목록">재생목록</a></li>
+      <li class="nav-item sidebar-slide-item"><a class="navbar-brand" href="#" title="내 동영상">
+        <img class="button-img" src="../img/video.png" alt="내 동영상">내 동영상</a></li>
+      <li class="nav-item sidebar-slide-item"><a class="navbar-brand" href="#" title="나중에 볼 동영상">
+        <img class="button-img" src="../img/schedule.png" alt="나중에 볼 동영상">나중에 볼 동영상</a></li>
+      <li class="nav-item sidebar-slide-item"><a class="navbar-brand" href="#" title="좋아요 표시한 동영상">
+        <img class="button-img" src="../img/thumb_up.png" alt="좋아요 표시한 동영상">좋아요 표시한 동영상</a></li>
+    </ul>
+    <ul class="nav flex-column menu-inline">
+      <li class="nav-item sidebar-slide-item"><a class="navbar-brand" href="#">구독</a></li>
+    </ul>
+    <ul class="nav flex-column menu-inline">
+      <li class="nav-item sidebar-slide-item">탐색</li>
+      <li class="nav-item sidebar-slide-item"><a class="navbar-brand" href="#" title="인기 급상승">
+        <img class="button-img" src="../img/fire.png" alt="인기 급상승">인기 급상승</a></li>
+      <li class="nav-item sidebar-slide-item"><a class="navbar-brand" href="#" title="쇼핑">
+        <img class="button-img" src="../img/shopping.png" alt="쇼핑">쇼핑</a></li>
+      <li class="nav-item sidebar-slide-item"><a class="navbar-brand" href="#" title="음악">
+        <img class="button-img" src="../img/music.png" alt="음악">음악</a></li>
+      <li class="nav-item sidebar-slide-item"><a class="navbar-brand" href="#" title="영화">
+        <img class="button-img" src="../img/movie.png" alt="영화">영화</a></li>
+      <li class="nav-item sidebar-slide-item"><a class="navbar-brand" href="#" title="실시간">
+        <img class="button-img" src="../img/sensors.png" alt="실시간">실시간</a></li>
+      <li class="nav-item sidebar-slide-item"><a class="navbar-brand" href="#" title="게임">
+        <img class="button-img" src="../img/game.png" alt="게임">게임</a></li>
+      <li class="nav-item sidebar-slide-item"><a class="navbar-brand" href="#" title="스포츠">
+        <img class="button-img" src="../img/sports.png" alt="스포츠">스포츠</a></li>
+      <li class="nav-item sidebar-slide-item"><a class="navbar-brand" href="#" title="학습 프로그램">
+        <img class="button-img" src="../img/school.png" alt="학습 프로그램">학습 프로그램</a></li>
+      <li class="nav-item sidebar-slide-item"><a class="navbar-brand" href="#" title="팟케스트">
+        <img class="button-img" src="../img/podcasts.png" alt="팟케스트">팟케스트</a></li>
+    </ul>
+  </div>
 </div>
 
+<!-- 모달 -->
+<div class="modal fade" id="userInfoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document" style="float: right; width: 350px; padding-top: 25px">
+    <div class="modal-content">
+      <div class="modal-header" style="border: 0;">
+        <div class="col col-md-auto" style="padding-right: 20px;">
+          <img class="card-icon" src="../img/dory.jpg">
+        </div>
+        <div class="col">
+          <h5 class="modal-title">aj choe</h5>
+          <h5 class="modal-title">@ajchoe</h5>
+          <a href="" class="border-light" style="text-decoration: none;">내 채널 보기</a>
+        </div>
+      </div>
+      <div class="modal-body" style="padding: 0;">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col menu-line">
+              <p><img class="button-img" src="../img/user_attributes.png">Google 계정</p>
+              <p><img class="button-img" src="../img/switch_account.png">계정 전환<img class="float-end" src="../img/chevron_right.png"></p>
+              <p><img class="button-img" src="../img/logout.png">로그아웃</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col menu-line">
+              <p><img class="button-img" src="../img/youtube_activity.png">YouTube 스튜디오</p>
+              <p><img class="button-img" src="../img/paid.png">구매 항목 및 멤버십</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col menu-line">
+              <p><img class="button-img" src="../img/shield_person.png">YouTube의 내 데이터</p>
+              <p><img class="button-img" src="../img/design.png">디자인: 기기 테마<img class="float-end" src="../img/chevron_right.png"></p>
+              <p><img class="button-img" src="../img/translate.png">언어: 한국어<img class="float-end" src="../img/chevron_right.png"></p>
+              <p><img class="button-img" src="../img/admin_panel_settings.png">제한모드: 사용 안함<img class="float-end" src="../img/chevron_right.png"></p>
+              <p><img class="button-img" src="../img/language.png">위치: 한국<img class="float-end" src="../img/chevron_right.png"></p>
+              <p><img class="button-img" src="../img/keyboard.png">단축키</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col menu-line">
+              <p><img class="button-img" src="../img/settings.png">설정</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col menu-line">
+              <p><img class="button-img" src="../img/help.png">고객센터</p>
+              <p><img class="button-img" src="../img/feedback.png">의견 보내기</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="section1"></div>
+
 <div class="d-flex" style="margin-top: 56px;">
-  <div class="row">
+  <div class="row" style="width:100%">
     <!-- 왼쪽 사이드바 -->
     <div class="main-navbar">
-      <a class="main-navbar-item" href="main.html"><img src="../img/home.png"><br>홈</a>
-      <a class="main-navbar-item" href="#"><img src="../img/shorts.png"><br>Shorts</a>
-      <a class="main-navbar-item" onclick="location.reload()"><img src="../img/video.png"><br>구독</a>
-      <a class="main-navbar-item" href="#"><img src="../img/my.png"><br>내 페이지</a>
+      <a class="main-navbar-item" href="main.html" title="홈"><img src="../img/home.png"><br>홈</a>
+      <a class="main-navbar-item" href="#" title="Shorts"><img src="../img/shorts.png"><br>Shorts</a>
+      <a class="main-navbar-item" href="feed.html" title="구독"><img src="../img/subscriptions.png"><br>구독</a>
+      <a class="main-navbar-item" href="#" title="내 페이지"><img src="../img/my.png"><br>내 페이지</a>
     </div>
 
     <!-- 영상 썸네일 카드 영역 카드 8개 이상 -->
-    <div class="main-video">
-      <h3 class="fw-bolder">최신순</h3>
-      <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="main-video row row-cols-1">
+      <div class="main-video-button d-flex align-items-center" style="height: 50px;">
+        <h3 class="fw-bolder">최신순</h3>
+      </div>
+      <div class="row row-cols-1 row-cols-md-3">
         <div class="card col">
-          <a href="https://youtu.be/DdVvgfx-8mE?feature=shared" class="border-light mb-3">
+          <a href="https://youtu.be/DdVvgfx-8mE?feature=shared" class="border-light">
             <img src="https://img.youtube.com/vi/DdVvgfx-8mE/mqdefault.jpg" class="card-img-top">
-            <div class="card-body">
-              <h5 class="card-title">잠은 오는데 놀고는 싶은 개냥이_도비</h5>
-              <p class="card-text">dory</p>
-              <p class="card-text">조회수 94회</p>
+            <div class="card-body row">
+              <div class="col col-md-auto">
+                <img class="card-icon" src="../img/dory.jpg">
+              </div>
+              <div class="col">
+                <h5 class="card-title">잠은 오는데 놀고는 싶은 개냥이_도비</h5>
+                <p class="card-text">dory</p>
+                <p class="card-text">조회수 94회</p>
+              </div>
             </div>
           </a>
         </div>
         <div class="card col">
-          <a href="https://youtu.be/c8GjsrBjUZU?feature=shared" class="border-light mb-3">
+          <a href="https://youtu.be/c8GjsrBjUZU?feature=shared" class="border-light">
             <img src="https://img.youtube.com/vi/c8GjsrBjUZU/mqdefault.jpg" class="card-img-top">
-            <div class="card-body">
-              <h5 class="card-title">드라마 속 재벌남과 억척녀가 계약연애할 때 클리셰 특징</h5>
-              <p class="card-text">엄은향</p>
-              <p class="card-text">조회수 125만회</p>
+            <div class="card-body row">
+              <div class="col col-md-auto">
+                <img class="card-icon" src="../img/umm.jpg">
+              </div>
+              <div class="col">
+                <h5 class="card-title">드라마 속 재벌남과 억척녀가 계약연애할 때 클리셰 특징</h5>
+                <p class="card-text">엄은향</p>
+                <p class="card-text">조회수 125만회</p>
+              </div>
             </div>
           </a>
         </div>
         <div class="card col">
-          <a href="https://youtu.be/_xOnGP_Js1A?feature=shared" class="border-light mb-3">
+          <a href="https://youtu.be/_xOnGP_Js1A?feature=shared" class="border-light">
             <img src="https://img.youtube.com/vi/_xOnGP_Js1A/mqdefault.jpg" class="card-img-top">
-            <div class="card-body">
-              <h5 class="card-title">[#WSWF] 메가 크루 미션 글로벌 대중 평가 | BUMSUP(범접)</h5>
-              <p class="card-text">The CHOOM</p>
-              <p class="card-text">조회수 1569만회</p>
+            <div class="card-body row">
+              <div class="col col-md-auto">
+                <img class="card-icon" src="../img/thechoom.jpg">
+              </div>
+              <div class="col">
+                <h5 class="card-title">[#WSWF] 메가 크루 미션 글로벌 대중 평가 | BUMSUP(범접)</h5>
+                <p class="card-text">The CHOOM</p>
+                <p class="card-text">조회수 1569만회</p>
+              </div>
             </div>
           </a>
         </div>
       </div>
-      <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="row row-cols-1 row-cols-md-3">
         <div class="card col">
-          <a href="https://youtu.be/DdVvgfx-8mE?feature=shared" class="border-light mb-3">
-            <img src="https://img.youtube.com/vi/DdVvgfx-8mE/mqdefault.jpg" class="card-img-top">
-            <div class="card-body">
-              <h5 class="card-title">잠은 오는데 놀고는 싶은 개냥이_도비</h5>
-              <p class="card-text">dory</p>
-              <p class="card-text">조회수 94회</p>
+          <a href="https://youtu.be/AuaABDWFs_8?feature=shared" class="border-light">
+            <img src="https://img.youtube.com/vi/AuaABDWFs_8/mqdefault.jpg" class="card-img-top">
+            <div class="card-body row">
+              <div class="col col-md-auto">
+                <img class="card-icon" src="../img/ive.jpg">
+              </div>
+              <div class="col">
+                <h5 class="card-title">GOLDEN Covered by IVE ANYUJIN</h5>
+                <p class="card-text">IVE</p>
+                <p class="card-text">조회수 264만회</p>
+              </div>
             </div>
           </a>
         </div>
         <div class="card col">
-          <a href="https://youtu.be/c8GjsrBjUZU?feature=shared" class="border-light mb-3">
-            <img src="https://img.youtube.com/vi/c8GjsrBjUZU/mqdefault.jpg" class="card-img-top">
-            <div class="card-body">
-              <h5 class="card-title">드라마 속 재벌남과 억척녀가 계약연애할 때 클리셰 특징</h5>
-              <p class="card-text">엄은향</p>
-              <p class="card-text">조회수 125만회</p>
+          <a href="https://youtu.be/ruAa6lkEZhg?feature=shared" class="border-light">
+            <img src="https://img.youtube.com/vi/ruAa6lkEZhg/mqdefault.jpg" class="card-img-top">
+            <div class="card-body row">
+              <div class="col col-md-auto">
+                <img class="card-icon" src="../img/deep.jpg">
+              </div>
+              <div class="col">
+                <h5 class="card-title">행복해요</h5>
+                <p class="card-text">띱 Deep</p>
+                <p class="card-text">조회수 161만회</p>
+              </div>
             </div>
           </a>
         </div>
         <div class="card col">
-          <a href="https://youtu.be/_xOnGP_Js1A?feature=shared" class="border-light mb-3">
-            <img src="https://img.youtube.com/vi/_xOnGP_Js1A/mqdefault.jpg" class="card-img-top">
-            <div class="card-body">
-              <h5 class="card-title">[#WSWF] 메가 크루 미션 글로벌 대중 평가 | BUMSUP(범접)</h5>
-              <p class="card-text">The CHOOM</p>
-              <p class="card-text">조회수 1569만회</p>
+          <a href="https://youtu.be/HaYNqWBaanI?feature=shared" class="border-light">
+            <img src="https://img.youtube.com/vi/HaYNqWBaanI/mqdefault.jpg" class="card-img-top">
+            <div class="card-body row">
+              <div class="col col-md-auto">
+                <img class="card-icon" src="../img/nerdult.jpg">
+              </div>
+              <div class="col">
+                <h5 class="card-title">응 너 127년 꼬우면 항소해</h5>
+                <p class="card-text">너덜트</p>
+                <p class="card-text">조회수 326만회</p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="row row-cols-1 row-cols-md-3">
+        <div class="card col">
+          <a href="https://youtu.be/HIeZ8W0zLMA?feature=shared" class="border-light">
+            <img src="https://img.youtube.com/vi/HIeZ8W0zLMA/mqdefault.jpg" class="card-img-top">
+            <div class="card-body row">
+              <div class="col col-md-auto">
+                <img class="card-icon" src="../img/beautifulnerd.jpg">
+              </div>
+              <div class="col">
+                <h5 class="card-title">[4K] 고추잠자리 - 작은 봄 Official M/V</h5>
+                <p class="card-text">뷰티풀너드</p>
+                <p class="card-text">조회수 646만회</p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="card col">
+          <a href="https://youtu.be/j2LZmDCCpKY?feature=shared" class="border-light">
+            <img src="https://img.youtube.com/vi/j2LZmDCCpKY/mqdefault.jpg" class="card-img-top">
+            <div class="card-body row">
+              <div class="col col-md-auto">
+                <img class="card-icon" src="../img/beautifulnerd.jpg">
+              </div>
+              <div class="col">
+                <h5 class="card-title">[4K] 고추잠자리 - 너라는 별 Official M/V</h5>
+                <p class="card-text">뷰티풀너드</p>
+                <p class="card-text">조회수 646만회</p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="card col">
+          <a href="https://youtu.be/keiMKn8l10s?feature=shared" class="border-light">
+            <img src="https://img.youtube.com/vi/keiMKn8l10s/mqdefault.jpg" class="card-img-top">
+            <div class="card-body row">
+              <div class="col col-md-auto">
+                <img class="card-icon" src="../img/shortbox.jpg">
+              </div>
+              <div class="col">
+                <h5 class="card-title">문방구</h5>
+                <p class="card-text">숏박스</p>
+                <p class="card-text">조회수 210만회</p>
+              </div>
             </div>
           </a>
         </div>
       </div>
     </div>
-
   </div>
+  <div id="sidebarOverlay" class="sidebar-overlay"></div>
 </div>
 <script src="../js/main.js"></script>
 </body>
