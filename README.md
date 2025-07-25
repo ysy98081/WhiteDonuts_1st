@@ -1,5 +1,6 @@
 <div align= "center"> 
-    <div style="font-weight: 700; font-size: 15px; text-align: center; color: #282d33;"> 기록하는 BackEnd개발자입니다.</li> </div> 
+    <h2 style="border-bottom: 1px solid #d8dee4; color: #282d33;"> 1차 프로젝트 </h2>  
+    <div style="font-weight: 700; font-size: 15px; text-align: center; color: #282d33;"> 화이트 도너츠팀원으로 유튜브 영상 클론 및 인터랙션 구현을 하고있습니다. </div> 
     </div>
     <div align= "center">
       <h2 style="border-bottom: 1px solid #d8dee4; color: #282d33;"> 🛠️ Tech Stacks </h2> <br> 
