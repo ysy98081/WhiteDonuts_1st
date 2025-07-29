@@ -4,53 +4,56 @@
   <meta charset="UTF-8">
   <title>WHITE DONUTS</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../css/total.css" rel="stylesheet">
   <link href="../css/main.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
 
 <div>
-  <!-- 네비게이션 바 -->
-  <nav class="navbar navbar-light bg-light fixed-top">
-    <div class="container-fluid d-flex flex-nowrap align-items-center justify-content-between">
-      <!-- 왼쪽: 로고 + 토글버튼 -->
-      <div class="d-flex align-items-center flex-shrink-0">
-        <button class="sidebar-close-btn" type="button" id="toggleSidebar">
-          <span class="toggler-icon"><img src="../img/menu.png" alt="" style="height: 35px;"></span>
-        </button>
-        <a class="navbar-brand mb-0" href="#section1">
-          <img src="../img/logo.png" alt="Logo" style="height: 30px;">
-        </a>
-      </div>
-      <div class="d-flex align-items-center flex-shrink-0">
-        <!-- 가운데: 검색창 -->
-        <div class="search-bar input-group mx-3">
-          <input type="search" class="form-control" placeholder="검색" aria-describedby="button-addon2">
-          <button class="search-btn btn btn-outline-secondary" type="button" id="button-addon2" title="검색">
-            <img src="../img/search.png" alt="">
+  <header class="header d-flex">
+    <!-- 네비게이션 바 -->
+    <nav class="navbar navbar-light fixed-top">
+      <div class="container-fluid d-flex flex-nowrap align-items-center justify-content-between">
+        <!-- 왼쪽: 로고 + 토글버튼 -->
+        <div class="d-flex align-items-center flex-shrink-0">
+          <button class="sidebar-close-btn" type="button" id="toggleSidebar">
+            <span class="toggler-icon"><img src="../img/menu.png" alt="" style="height: 35px;"></span>
+          </button>
+          <a class="navbar-brand mb-0" href="#section1">
+            <img src="../img/logo.png" alt="Logo" style="height: 30px;">
+          </a>
+        </div>
+        <div class="d-flex align-items-center justify-content-center w-100 px-3">
+          <div class="input-group search-bar flex-grow-1 me-3">
+            <input type="search" class="form-control" placeholder="검색" aria-describedby="button-addon2">
+            <button class="search-btn btn btn-outline-secondary" type="button" id="button-addon2" title="검색">
+              <img src="../img/search.png" alt="">
+            </button>
+          </div>
+          <button class="make-btn" type="button" title="음성으로 검색">
+            <img src="../img/mic.png" alt="">
           </button>
         </div>
-        <button class="make-btn" type="button" title="음성으로 검색">
-          <img src="../img/mic.png" alt="">
-        </button>
-      </div>
 
-      <!-- 오른쪽: 버튼들 -->
-      <div class="d-flex align-items-center flex-shrink-0 " style="gap: 8px; white-space: nowrap;">
-        <button class="d-flex align-items-center justify-content-center make-btn" type="button" style="width: 100px;">
-          <img src="../img/add.png" alt="">만들기</button>
-        <button class="sidebar-close-btn" type="button" title="알림">
-          <img src="../img/alarm.png" alt="알림">
-          <span class="position-absolute top-40 start-60 translate-middle badge rounded-pill bg-danger">
+        <!-- 오른쪽: 버튼들 -->
+        <div class="d-flex align-items-center flex-shrink-0 " style="gap: 8px; white-space: nowrap;">
+          <button class="d-flex align-items-center justify-content-center make-btn" type="button" style="width: 100px;">
+            <img src="../img/add.png" alt="">만들기</button>
+          <button class="sidebar-close-btn" type="button" title="알림">
+            <img src="../img/alarm.png" alt="알림">
+            <span class="position-absolute top-40 start-60 translate-middle badge rounded-pill bg-danger">
             10<span class="visually-hidden">unread messages</span>
           </span>
-        </button>
-        <button class="card-icon" type="button" data-bs-toggle="modal" data-bs-target="#userInfoModal">
-          <img class="card-icon" src="../img/dory.jpg">
-        </button>
+          </button>
+          <button class="card-icon" type="button" data-bs-toggle="modal" data-bs-target="#userInfoModal">
+            <img class="card-icon" src="../img/dory.jpg">
+          </button>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
+  </header>
+
 </div>
 <!-- 슬라이드 사이드바 -->
 <div class="sidebar-slide" id="sidebarMenu">
@@ -175,8 +178,8 @@
 
 <div id="section1"></div>
 
-<div class="d-flex" style="margin-top: 56px;">
-  <div class="row" style="width:100%">
+<div class="contents d-flex">
+  <div class="row g-0">
     <!-- 왼쪽 사이드바 -->
     <div class="main-navbar">
       <a class="main-navbar-item" onclick="location.reload()" title="홈"><img src="../img/home.png"><br>홈</a>
@@ -186,153 +189,33 @@
     </div>
 
     <!-- 영상 썸네일 카드 영역 카드 8개 이상 -->
-    <div class="main-video row row-cols-1">
-      <div class="main-video-button d-flex align-items-center" style="height: 50px;">
-        <button type="button" class="btn btn-dark btn-sm">전체</button>
-        <button type="button" class="btn btn-light btn-sm">음악</button>
-        <button type="button" class="btn btn-light btn-sm">팟케스트</button>
-        <button type="button" class="btn btn-light btn-sm">믹스</button>
-        <button type="button" class="btn btn-light btn-sm">라이브</button>
-        <button type="button" class="btn btn-light btn-sm">최근에 업로드된 동영상</button>
-        <button type="button" class="btn btn-light btn-sm">감상한 동영상</button>
-        <button type="button" class="btn btn-light btn-sm">새로운 맞춤 동영상</button>
-      </div>
-      <div class="row row-cols-1 row-cols-md-3">
-        <div class="card col">
-          <a href="https://youtu.be/DdVvgfx-8mE?feature=shared" class="border-light">
-            <img src="https://img.youtube.com/vi/DdVvgfx-8mE/mqdefault.jpg" class="card-img-top">
-            <div class="card-body row">
-              <div class="col col-md-auto">
-                <img class="card-icon" src="../img/dory.jpg">
-              </div>
-              <div class="col">
-                <h5 class="card-title">잠은 오는데 놀고는 싶은 개냥이_도비</h5>
-                <p class="card-text">dory</p>
-                <p class="card-text">조회수 94회 • 4년전</p>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="card col">
-          <a href="https://youtu.be/c8GjsrBjUZU?feature=shared" class="border-light">
-            <img src="https://img.youtube.com/vi/c8GjsrBjUZU/mqdefault.jpg" class="card-img-top">
-            <div class="card-body row">
-              <div class="col col-md-auto">
-                <img class="card-icon" src="../img/umm.jpg">
-              </div>
-              <div class="col">
-                <h5 class="card-title">드라마 속 재벌남과 억척녀가 계약연애할 때 클리셰 특징</h5>
-                <p class="card-text">엄은향</p>
-                <p class="card-text">조회수 125만회 • 1년전</p>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="card col">
-          <a href="https://youtu.be/_xOnGP_Js1A?feature=shared" class="border-light">
-            <img src="https://img.youtube.com/vi/_xOnGP_Js1A/mqdefault.jpg" class="card-img-top">
-            <div class="card-body row">
-              <div class="col col-md-auto">
-                <img class="card-icon" src="../img/thechoom.jpg">
-              </div>
-              <div class="col">
-                <h5 class="card-title">[#WSWF] 메가 크루 미션 글로벌 대중 평가 | BUMSUP(범접)</h5>
-                <p class="card-text">The CHOOM</p>
-                <p class="card-text">조회수 1569만회 • 1개월전</p>
-              </div>
-            </div>
-          </a>
+    <div class="main-video" style="padding-top: 60px;">
+      <div class="main-video-header row">
+        <div class="main-video-button">
+          <button type="button" class="btn btn-dark btn-sm">전체</button>
+          <button type="button" class="btn btn-light btn-sm">음악</button>
+          <button type="button" class="btn btn-light btn-sm">팟케스트</button>
+          <button type="button" class="btn btn-light btn-sm">믹스</button>
+          <button type="button" class="btn btn-light btn-sm">라이브</button>
+          <button type="button" class="btn btn-light btn-sm">최근에 업로드된 동영상</button>
+          <button type="button" class="btn btn-light btn-sm">감상한 동영상</button>
+          <button type="button" class="btn btn-light btn-sm">새로운 맞춤 동영상</button>
         </div>
       </div>
-      <div class="row row-cols-1 row-cols-md-3">
-        <div class="card col">
-          <a href="https://youtu.be/AuaABDWFs_8?feature=shared" class="border-light">
-            <img src="https://img.youtube.com/vi/AuaABDWFs_8/mqdefault.jpg" class="card-img-top">
+
+      <div class="main-video-scroll row row-cols-1" id="video-list">
+        <!-- 템플릿 카드 -->
+        <div class="card col-lg-4 col-md-6" id="card-template" style="display: none;">
+          <a href="#" class="border-light">
+            <img src="" class="card-img-top" data-thumbnail>
             <div class="card-body row">
               <div class="col col-md-auto">
-                <img class="card-icon" src="../img/ive.jpg">
+                <img class="card-icon" src="" data-icon>
               </div>
               <div class="col">
-                <h5 class="card-title">GOLDEN Covered by IVE ANYUJIN</h5>
-                <p class="card-text">IVE</p>
-                <p class="card-text">조회수 264만회 • 5일전</p>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="card col">
-          <a href="https://youtu.be/ruAa6lkEZhg?feature=shared" class="border-light">
-            <img src="https://img.youtube.com/vi/ruAa6lkEZhg/mqdefault.jpg" class="card-img-top">
-            <div class="card-body row">
-              <div class="col col-md-auto">
-                <img class="card-icon" src="../img/deep.jpg">
-              </div>
-              <div class="col">
-                <h5 class="card-title">행복해요</h5>
-                <p class="card-text">띱 Deep</p>
-                <p class="card-text">조회수 161만회 • 6일전</p>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="card col">
-          <a href="https://youtu.be/HaYNqWBaanI?feature=shared" class="border-light">
-            <img src="https://img.youtube.com/vi/HaYNqWBaanI/mqdefault.jpg" class="card-img-top">
-            <div class="card-body row">
-              <div class="col col-md-auto">
-                <img class="card-icon" src="../img/nerdult.jpg">
-              </div>
-              <div class="col">
-                <h5 class="card-title">응 너 127년 꼬우면 항소해</h5>
-                <p class="card-text">너덜트</p>
-                <p class="card-text">조회수 326만회 • 7일전</p>
-              </div>
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="row row-cols-1 row-cols-md-3">
-        <div class="card col">
-          <a href="https://youtu.be/HIeZ8W0zLMA?feature=shared" class="border-light">
-            <img src="https://img.youtube.com/vi/HIeZ8W0zLMA/mqdefault.jpg" class="card-img-top">
-            <div class="card-body row">
-              <div class="col col-md-auto">
-                <img class="card-icon" src="../img/beautifulnerd.jpg">
-              </div>
-              <div class="col">
-                <h5 class="card-title">[4K] 고추잠자리 - 작은 봄 Official M/V</h5>
-                <p class="card-text">뷰티풀너드</p>
-                <p class="card-text">조회수 646만회 • 3개월전</p>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="card col">
-          <a href="https://youtu.be/j2LZmDCCpKY?feature=shared" class="border-light">
-            <img src="https://img.youtube.com/vi/j2LZmDCCpKY/mqdefault.jpg" class="card-img-top">
-            <div class="card-body row">
-              <div class="col col-md-auto">
-                <img class="card-icon" src="../img/beautifulnerd.jpg">
-              </div>
-              <div class="col">
-                <h5 class="card-title">[4K] 고추잠자리 - 너라는 별 Official M/V</h5>
-                <p class="card-text">뷰티풀너드</p>
-                <p class="card-text">조회수 646만회 • 7개월전</p>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="card col">
-          <a href="https://youtu.be/keiMKn8l10s?feature=shared" class="border-light">
-            <img src="https://img.youtube.com/vi/keiMKn8l10s/mqdefault.jpg" class="card-img-top">
-            <div class="card-body row">
-              <div class="col col-md-auto">
-                <img class="card-icon" src="../img/shortbox.jpg">
-              </div>
-              <div class="col">
-                <h5 class="card-title">문방구</h5>
-                <p class="card-text">숏박스</p>
-                <p class="card-text">조회수 210만회 • 6일전</p>
+                <h5 class="card-title" data-title></h5>
+                <p class="card-text" data-uploader></p>
+                <p class="card-text" data-meta></p>
               </div>
             </div>
           </a>
@@ -342,6 +225,7 @@
   </div>
   <div id="sidebarOverlay" class="sidebar-overlay"></div>
 </div>
+<script src="../js/total.js"></script>
 <script src="../js/main.js"></script>
 </body>
 </html>

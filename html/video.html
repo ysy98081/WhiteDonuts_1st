@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <title>WHITE DONUTS</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="../css/total.css" rel="stylesheet">
-  <link href="../css/main.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <link href="../css/total.css" rel="stylesheet">
+  <link href="../css/video.css" rel="stylesheet">
 </head>
 <body>
 
@@ -39,7 +39,8 @@
         <!-- 오른쪽: 버튼들 -->
         <div class="d-flex align-items-center flex-shrink-0 " style="gap: 8px; white-space: nowrap;">
           <button class="d-flex align-items-center justify-content-center make-btn" type="button" style="width: 100px;">
-            <img src="../img/add.png" alt="">만들기</button>
+            <img src="../img/add.png" alt="">만들기
+          </button>
           <button class="sidebar-close-btn" type="button" title="알림">
             <img src="../img/alarm.png" alt="알림">
             <span class="position-absolute top-40 start-60 translate-middle badge rounded-pill bg-danger">
@@ -63,7 +64,7 @@
         <button type="button" id="closeSidebarBtn" class="sidebar-close-btn">
           <span class="toggler-icon"><img src="../img/menu.png" alt="" style="height: 35px;"></span>
         </button>
-        <a class="navbar-brand mb-0" onclick="location.reload()">
+        <a class="navbar-brand mb-0" href="main.html">
           <img src="../img/logo.png" alt="Logo" style="height: 30px;">
         </a>
       </li>
@@ -71,7 +72,7 @@
   </div>
   <div class="sidebar-slide-content">
     <ul class="nav flex-column">
-      <li class="nav-item sidebar-slide-item"><a class="navbar-brand" onclick="location.reload()" title="홈">
+      <li class="nav-item sidebar-slide-item"><a class="navbar-brand" href="main.html" title="홈">
         <img class="button-img" src="../img/home.png">홈</a></li>
       <li class="nav-item sidebar-slide-item"><a class="navbar-brand" href="#" title="Shorts">
         <img class="button-img" src="../img/shorts.png" alt="Shorts">Shorts</a>
@@ -81,7 +82,8 @@
       </li>
     </ul>
     <ul class="nav flex-column menu-inline">
-      <li class="nav-item sidebar-slide-item fw-bold"><a class="navbar-brand" href="#" title="내 페이지">내 페이지 <img src="../img/chevron_right.png"></a></li>
+      <li class="nav-item sidebar-slide-item fw-bold"><a class="navbar-brand" href="#" title="내 페이지">내 페이지 <img
+        src="../img/chevron_right.png"></a></li>
       <li class="nav-item sidebar-slide-item"><a class="navbar-brand" href="#" title="시청기록">
         <img class="button-img" src="../img/history.png" alt="시청기록">시청기록</a></li>
       <li class="nav-item sidebar-slide-item"><a class="navbar-brand" href="#" title="재생목록">
@@ -121,8 +123,10 @@
 </div>
 
 <!-- 모달 -->
-<div class="modal fade" id="userInfoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document" style="float: right; width: 350px; padding-top: 25px">
+<div class="modal fade" id="userInfoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document"
+       style="float: right; width: 350px; padding-top: 25px">
     <div class="modal-content">
       <div class="modal-header" style="border: 0;">
         <div class="col col-md-auto" style="padding-right: 20px;">
@@ -139,7 +143,8 @@
           <div class="row">
             <div class="col menu-line">
               <p><img class="button-img" src="../img/user_attributes.png">Google 계정</p>
-              <p><img class="button-img" src="../img/switch_account.png">계정 전환<img class="float-end" src="../img/chevron_right.png"></p>
+              <p><img class="button-img" src="../img/switch_account.png">계정 전환
+                <img class="float-end" src="../img/chevron_right.png"></p>
               <p><img class="button-img" src="../img/logout.png">로그아웃</p>
             </div>
           </div>
@@ -152,10 +157,15 @@
           <div class="row">
             <div class="col menu-line">
               <p><img class="button-img" src="../img/shield_person.png">YouTube의 내 데이터</p>
-              <p><img class="button-img" src="../img/design.png">디자인: 기기 테마<img class="float-end" src="../img/chevron_right.png"></p>
-              <p><img class="button-img" src="../img/translate.png">언어: 한국어<img class="float-end" src="../img/chevron_right.png"></p>
-              <p><img class="button-img" src="../img/admin_panel_settings.png">제한모드: 사용 안함<img class="float-end" src="../img/chevron_right.png"></p>
-              <p><img class="button-img" src="../img/language.png">위치: 한국<img class="float-end" src="../img/chevron_right.png"></p>
+              <p><img class="button-img" src="../img/design.png">디자인: 기기 테마<img class="float-end"
+                                                                                src="../img/chevron_right.png"></p>
+              <p><img class="button-img" src="../img/translate.png">언어: 한국어<img class="float-end"
+                                                                                src="../img/chevron_right.png"></p>
+              <p><img class="button-img" src="../img/admin_panel_settings.png">제한모드: 사용 안함<img class="float-end"
+                                                                                               src="../img/chevron_right.png">
+              </p>
+              <p><img class="button-img" src="../img/language.png">위치: 한국<img class="float-end"
+                                                                              src="../img/chevron_right.png"></p>
               <p><img class="button-img" src="../img/keyboard.png">단축키</p>
             </div>
           </div>
@@ -178,47 +188,139 @@
 
 <div id="section1"></div>
 
-<div class="contents d-flex">
-  <div class="row g-0">
-    <!-- 왼쪽 사이드바 -->
-    <div class="main-navbar">
-      <a class="main-navbar-item" href="main.html" title="홈"><img src="../img/home.png"><br>홈</a>
-      <a class="main-navbar-item" href="#" title="Shorts"><img src="../img/shorts.png"><br>Shorts</a>
-      <a class="main-navbar-item" href="feed.html" title="구독"><img src="../img/subscriptions.png"><br>구독</a>
-      <a class="main-navbar-item" href="#" title="내 페이지"><img src="../img/my.png"><br>내 페이지</a>
-    </div>
-
-    <!-- 영상 썸네일 카드 영역 카드 8개 이상 -->
-    <div class="main-video" style="padding-top: 30px;">
-      <div class="main-video-button d-flex align-items-center justify-content-between" style="height: 60px;">
-        <h5 class="fw-bolder">최신순</h5>
-        <div class="d-flex align-items-center">
-          <a href="" class="d-flex align-items-center justify-content-center border-light feedback-btn" style="text-decoration: none; margin-right: 10px; width: 80px;">관리</a>
-          <button class="sidebar-close-btn" type="button">
-            <img src="../img/grid_view.png" style="height: 30px;">
-          </button>
-          <button class="sidebar-close-btn" type="button">
-            <img src="../img/list.png" style="height: 30px;">
-          </button>
+<div class="columns">
+  <div class="primary">
+    <div class="player">
+      <div class="player-inner">
+        <div class="">
+          <iframe src="https://www.youtube.com/embed/j2LZmDCCpKY?si=OSXh488obrkR1xd8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
       </div>
+    </div>
 
-      <div class="main-video-scroll row row-cols-1" id="video-list">
-        <!-- 템플릿 카드 -->
-        <div class="card col-lg-4 col-md-6" id="card-template" style="display: none;">
-          <a href="#" class="border-light">
-            <img src="" class="card-img-top" data-thumbnail>
-            <div class="card-body row">
-              <div class="col col-md-auto">
-                <img class="card-icon" src="" data-icon>
-              </div>
-              <div class="col">
-                <h5 class="card-title" data-title></h5>
-                <p class="card-text" data-uploader></p>
-                <p class="card-text" data-meta></p>
-              </div>
-            </div>
-          </a>
+    <div class="below">
+      <div class="title row row-cols-1">
+        <h5>[4K] 고추잠자리 - 너라는 별 Official M/V</h5>
+        <div class="channel-info d-flex align-items-center gap-3">
+          <button class="card-icon" type="button">
+            <img class="card-icon" src="../img/beautifulnerd.jpg">
+          </button>
+          <div class="channel-text">
+            <a href="#" class="border-light text-decoration-none text-dark">
+              <h6 class="card-title mb-1">뷰티풀너드</h6>
+              <p class="card-text">구독자 135만명</p>
+            </a>
+          </div>
+          <button class="btn btn-dark subscribe-btn" type="button">구독</button>
+          <div class="ms-auto">
+            <button class="thumbup-btn" type="button">
+              <img src="../img/thumb_up.png" title="이 동영상이 마음에 듭니다.">
+            </button>
+            <button class="thumbdown-btn" type="button">
+              <img src="../img/thumb_down.png" title="이 동영상이 마음에 들지 않습니다.">
+            </button>
+          </div>
+          <button class="make-btn" type="button">
+            <img src="../img/share.png" title="공유">공유</button>
+          <button class="make-btn" type="button">
+            <img src="../img/save.png" title="저장">저장</button>
+          <button class="make-btn" type="button">
+            <img src="../img/more.png"></button>
+        </div>
+      </div>
+      <div class="owner">
+        <div class="owner-inner">
+          <h6>조회수 1,972,873회  2025. 4. 6.</h6>
+          <p class="owner-text " id="owner-text">
+            MV Directed by Kwon Meen
+            Assistant Director & Producer Jang Yejin
+
+            DOP
+            Kim Jeehoo
+
+            Assistant Camera
+            MOGEOSU
+
+            Design
+            Lee Jungmin
+
+            Artist Manger
+            Choi Wooseong
+            Yang Namsu
+            Kim Kibeom
+
+            Documentary team
+            MOGEOSU
+
+            Hair & Make up
+            Areum
+            竹内 未夢
+
+            Special Thanks to
+            Parkryeok
+
+            MUSIC CREDIT
+
+            Lyrics by Choi Jaewoo, Gist, HOON, GORAE
+            Composed by TOIL, Pateko, HAAN, Gist, HOON
+            Arranged by TOIL, Pateko, HAAN
+
+            Piano Lee Myungho
+            Bass Park Chanmin
+            String Lim Woobin
+            Guitar Choi Yeonghun
+            Drum Lee Myungho, TOIL
+            Percussion HAAN
+          </p>
+          <button class="show-btn fw-bold" id="showMore" onclick="showMore()">더보기</button>
+          <button class="show-btn fw-bold" id="showhidden" onclick="showhidden()" style="display: none;">간략히</button>
+        </div>
+      </div>
+      <div class="actions">
+        <div class="actions-top d-flex align-items-center gap-3">
+          <h4 style="margin: 0 32px 0 0;">댓글 383개</h4>
+          <p class="" type="button">
+            <img class="" src="../img/sort.png">정렬 기준
+          </p>
+        </div>
+
+        <div class="input-material">
+          <img class="card-icon" src="../img/dory.jpg">
+          <input type="text" class="" id="name-field" required>
+        </div>
+
+
+<!--        <div class="channel-info d-flex align-items-center gap-3">-->
+<!--          <button class="card-icon" type="button">-->
+<!--            <img class="card-icon" src="../img/beautifulnerd.jpg">-->
+<!--          </button>-->
+<!--          <div class="channel-text">-->
+<!--            <a href="#" class="border-light text-decoration-none text-dark">-->
+<!--              <h6 class="card-title mb-1">뷰티풀너드</h6>-->
+<!--              <p class="card-text">구독자 135만명</p>-->
+<!--            </a>-->
+<!--          </div>-->
+<!--          <button class="btn btn-dark subscribe-btn" type="button">구독</button>-->
+<!--        </div>-->
+      </div>
+      </div>
+      <div class="description">
+
+      </div>
+    </div>
+
+  <div class="secondary">
+    <div class="item">
+      <div class="secondary-video-scroll" id="video-list" style="max-width: 540px;">
+        <div class="card" id="card-template" style="display: none;">
+          <img src="" class="card-img-top" data-thumbnail>
+          <div class="">
+            <a href="#" class="border-light" style="text-decoration: none; color: inherit;">
+              <h6 class="card-title" data-title></h6>
+              <p class="card-text" data-uploader></p>
+              <p class="card-text" data-meta></p>
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -226,6 +328,6 @@
   <div id="sidebarOverlay" class="sidebar-overlay"></div>
 </div>
 <script src="../js/total.js"></script>
-<script src="../js/main.js"></script>
+<script src="../js/video.js"></script>
 </body>
 </html>

@@ -1,10 +1,84 @@
-{
-  "name": "data",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+[
+  {
+    "title": "잠은 오는데 놀고는 싶은 개냥이_도비",
+    "videoId": "DdVvgfx-8mE",
+    "uploader": "dory",
+    "views": "94회",
+    "uploadDate": "4년전",
+    "icon": "../img/dory.jpg",
+    "iframurl": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/DdVvgfx-8mE?si=LR7nOQiKFbHFOT-C\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>"
   },
-  "private": true
-}
+  {
+    "title": "드라마 속 재벌남과 억척녀가 계약연애할 때 클리셰 특징",
+    "videoId": "c8GjsrBjUZU",
+    "uploader": "엄은향",
+    "views": "125만회",
+    "uploadDate": "1년전",
+    "icon": "../img/umm.jpg",
+    "iframurl": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/c8GjsrBjUZU?si=1vAvh9-CkuhcoGzm\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>"
+  },
+  {
+    "title": "[#WSWF] 메가 크루 미션 글로벌 대중 평가 | BUMSUP(범접)",
+    "videoId": "_xOnGP_Js1A",
+    "uploader": "The CHOOM",
+    "views": "1569만회",
+    "uploadDate": "1개월전",
+    "icon": "../img/thechoom.jpg",
+    "iframurl": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/_xOnGP_Js1A?si=Y3-YfftYv-6TeyZl\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>"
+  },
+  {
+    "title": "GOLDEN Covered by IVE ANYUJIN",
+    "uploader": "IVE",
+    "views": "264만회",
+    "uploadDate": "5일전",
+    "videoId": "AuaABDWFs_8",
+    "icon": "../img/ive.jpg",
+    "iframurl": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/AuaABDWFs_8?si=PdYKtYy-e4L57YAT\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>"
+  },
+  {
+    "title": "행복해요",
+    "uploader": "띱 Deep",
+    "views": "161만회",
+    "uploadDate": "6일전",
+    "videoId": "ruAa6lkEZhg",
+    "icon": "../img/deep.jpg",
+    "iframurl": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/ruAa6lkEZhg?si=BTYvldMswhojRcDb\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>"
+  },
+  {
+    "title": "응 너 127년 꼬우면 항소해",
+    "uploader": "너덜트",
+    "views": "326만회",
+    "uploadDate": "7일전",
+    "videoId": "HaYNqWBaanI",
+    "icon": "../img/nerdult.jpg",
+    "iframurl": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/HaYNqWBaanI?si=LAazLbsxYFxdMCTN\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>"
+  },
+  {
+    "title": "[4K] 고추잠자리 - 작은 봄 Official M/V",
+    "uploader": "뷰티풀너드",
+    "views": "646만회",
+    "uploadDate": "3개월전",
+    "videoId": "HIeZ8W0zLMA",
+    "icon": "../img/beautifulnerd.jpg",
+    "iframurl": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/HIeZ8W0zLMA?si=4tVsBlteZBu0FoIy\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>"
+  },
+  {
+    "title": "[4K] 고추잠자리 - 너라는 별 Official M/V",
+    "uploader": "뷰티풀너드",
+    "views": "646만회",
+    "uploadDate": "7개월전",
+    "videoId": "j2LZmDCCpKY",
+    "icon": "../img/beautifulnerd.jpg",
+    "iframurl": "",
+    "fullText": "MV Directed by Kwon Meen\n            Assistant Director & Producer Jang Yejin\n\n            DOP\n            Kim Jeehoo\n\n            Assistant Camera\n            MOGEOSU\n\n            Design\n            Lee Jungmin\n\n            Artist Manger\n            Choi Wooseong\n            Yang Namsu\n            Kim Kibeom\n\n            Documentary team\n            MOGEOSU\n\n            Hair & Make up\n            Areum\n            竹内 未夢\n\n            Special Thanks to\n            Parkryeok\n\n            MUSIC CREDIT\n\n            Lyrics by Choi Jaewoo, Gist, HOON, GORAE\n            Composed by TOIL, Pateko, HAAN, Gist, HOON\n            Arranged by TOIL, Pateko, HAAN\n\n            Piano Lee Myungho\n            Bass Park Chanmin\n            String Lim Woobin\n            Guitar Choi Yeonghun\n            Drum Lee Myungho, TOIL\n            Percussion HAAN"
+  },
+  {
+    "title": "문방구",
+    "uploader": "숏박스",
+    "views": "210만회",
+    "uploadDate": "6일전",
+    "videoId": "keiMKn8l10s",
+    "icon": "../img/shortbox.jpg",
+    "iframurl": ""
+  }
+]
