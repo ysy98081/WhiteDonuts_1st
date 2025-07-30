@@ -1,4 +1,4 @@
-fetch("data/index.json")
+fetch("../data/package.json")
   .then(res => res.json())
   .then(data => {
     const container = document.getElementById("video-list");
