@@ -49,7 +49,7 @@
   align-items: flex-start;
   border: none;
   transition: transform 0.3s ease;
-  margin: 10px 0;
+  margin: 15px 0;
 }
 
 .owner{
@@ -86,6 +86,8 @@
 .secondary-video-scroll {
   box-sizing: border-box;
   padding: 0 10px;
+  max-width: 500px;
+  min-width: 280px;
 }
 
 .secondary-video-scroll .card {
@@ -139,6 +141,16 @@
   margin: 0;
 }
 
+/* 타이틀 2줄이상 줄임*/
+.line-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;       /* 최대 2줄 */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
+}
+
 
 /* ================================
    아이콘 (프로필 등)
@@ -148,6 +160,20 @@
   width: 40px;
   background: none;
   border: none;
+}
+
+.comment-icon {
+  border-radius: 50%;
+  width: 25px;
+  background: none;
+  border: none;
+}
+
+.comment-icon:hover {
+  border-radius: 50%;
+  width: 25px;
+  border: none;
+  background-color: #e1e1e1;
 }
 
 /* ================================
@@ -160,26 +186,62 @@
 
 .thumbup-btn {
   border-radius: 40px 0 0 40px;
-  background-color: #e1e1e1;
-  border: 1px solid #e1e1e1;
+  background-color: #f8f9fa;
+  border: none;
   height: 40px;
   text-align: center;
-  min-width: 50px;
+  min-width: 70px;
+}
+
+.thumbup-btn:hover {
+  border-radius: 40px 0 0 40px;
+  background-color: #e1e1e1;
+  border: none;
+  height: 40px;
+  text-align: center;
+  min-width: 70px;
 }
 
 .thumbdown-btn {
   border-radius: 0 40px 40px 0;
-  background-color: #e1e1e1;
-  border: 1px solid #e1e1e1;
+  background-color: #f8f9fa;
+  border: none;
   height: 40px;
   text-align: center;
-  min-width: 50px;
+  min-width: 70px;
+}
+
+.thumbdown-btn:hover {
+  border-radius: 0 40px 40px 0;
+  background-color: #e1e1e1;
+  border: none;
+  height: 40px;
+  text-align: center;
+  min-width: 70px;
+}
+
+.thumb-divider {
+  width: 1px;
+  height: 24px; /* 버튼 높이에 맞춰 조절 */
+  background-color: #ccc;
+}
+
+.thumb-content{
+  display: flex;
+  align-items: center;
+  gap: 6px; /* 숫자와 이미지 사이 간격 */
 }
 
 
 /* ================================
-   기타 (추후 확장 가능)
+   댓글
 ================================ */
-.item {
-  /* 필요 시 사용 */
+.comment-header{
+  margin: 10px 0;
+  height: 100px;
+}
+
+.comment-template {
+  display: none;
+  height: 100px;
 }

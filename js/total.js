@@ -20,3 +20,10 @@ overlay.addEventListener('click', () => {
   sidebar.classList.remove('active');
   overlay.classList.remove('active');
 });
+
+document.querySelectorAll(".sidebar-slide-item").forEach(li => {
+  li.addEventListener("click", () => {
+    const link = li.querySelector("a");
+    if (link) link.click();
+  });
+});

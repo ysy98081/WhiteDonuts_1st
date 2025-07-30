@@ -1,25 +1,29 @@
-fetch("../data/package.json")
-  .then(res => res.json())
-  .then(data => {
-    const container = document.getElementById("video-list");
-    const template = document.getElementById("card-template");
+document.addEventListener("DOMContentLoaded", () => {
+  fetch("../data/comment.json")
+    .then(res => res.json())
+    .then(data => {
+      const list = document.getElementById("comment-container");
+      const template = document.getElementById("comment-template");
 
-    data.forEach(video => {
-      const card = template.cloneNode(true);
-      card.removeAttribute("id");
-      card.style.display = ""; // 보이게 설정
+      data.forEach(comment => {
+        const commentlist = template.cloneNode(true);
+        commentlist.removeAttribute("id");
+        commentlist.style.display = "";
+        commentlist.classList.add("d-flex", "align-items-start");
 
-      // 요소 채우기
-      card.querySelector("a").href = `https://youtu.be/${video.videoId}?feature=shared`;
-      card.querySelector("[data-thumbnail]").src = `https://img.youtube.com/vi/${video.videoId}/mqdefault.jpg`;
-      card.querySelector("[data-title]").textContent = video.title;
-      card.querySelector("[data-uploader]").textContent = video.uploader;
-      card.querySelector("[data-meta]").textContent = `조회수 ${video.views} • ${video.uploadDate}`;
+        // 요소 채우기 - 속성 이름 일치 필수!
+        commentlist.querySelector("[data-user]").textContent = comment.user;
+        commentlist.querySelector("[data-avatar]").setAttribute("src", comment.avatar);
+        commentlist.querySelector("[data-comment]").textContent = comment.comment;
+        commentlist.querySelector("[data-likes]").textContent = comment.likes;
+        commentlist.querySelector("[data-dislikes]").textContent = comment.dislikes;
+        commentlist.querySelector("[data-time]").textContent = comment.time;
 
-      container.appendChild(card);
-    });
-  })
-  .catch(err => console.error("JSON 로딩 실패:", err));
+        list.appendChild(commentlist);
+      });
+    })
+    .catch(err => console.error("JSON 로딩 실패:", err));
+});
 
 const textContainer = document.getElementById('owner-text');
 const showMoreBtn = document.getElementById('showMore');
@@ -40,3 +44,147 @@ function showhidden() {
   showMoreBtn.style.display = 'inline';
   showHiddenBtn.style.display = 'none';
 }
+
+const thumupBtn = document.getElementById('thumbupbtn');
+const thumupNum = document.getElementById('thumbup-num');
+const thumdownBtn = document.getElementById('thumbdownbtn');
+const thumdownNum = document.getElementById('thumbdown-num');
+
+let baseUp = parseInt(thumupNum.textContent);
+let baseDown = parseInt(thumdownNum.textContent);
+
+let isThumbUp = false;
+let isThumbDown = false;
+
+thumupBtn.addEventListener('click', () => {
+  if (isThumbUp) {
+    baseUp--;
+    isThumbUp = false;
+  } else {
+    baseUp++;
+    if (isThumbDown) {
+      baseDown--;
+      isThumbDown = false;
+    }
+    isThumbUp = true;
+  }
+
+  thumupNum.textContent = baseUp;
+  thumdownNum.textContent = baseDown;
+});
+
+thumdownBtn.addEventListener('click', () => {
+  if (isThumbDown) {
+    baseDown--;
+    isThumbDown = false;
+  } else {
+    baseDown++;
+    if (isThumbUp) {
+      baseUp--;
+      isThumbUp = false;
+    }
+    isThumbDown = true;
+  }
+
+  thumupNum.textContent = baseUp;
+  thumdownNum.textContent = baseDown;
+});
+
+const messageInput = document.getElementById("messageInput");
+const addCommentBtn = document.getElementById("addCommentBtn");
+const commentContainer = document.getElementById("comment-container");
+const commentTemplate = document.getElementById("comment-template");
+
+// 댓글 추가 함수
+function addComment() {
+  const text = messageInput.value.trim();
+  if (!text) return;
+
+  const newComment = commentTemplate.cloneNode(true);
+  newComment.removeAttribute("id");
+  newComment.classList.remove("comment-template");
+  //newComment.style.display = "flex"; // 혹시 템플릿이 숨겨져 있다면 보이게
+  newComment.style.height = "100px";
+  newComment.classList.add("d-flex", "align-items-start");
+
+  // 사용자 정보 채우기
+  newComment.querySelector("[data-avatar]").src = "../img/dory.jpg";
+  newComment.querySelector("[data-user]").textContent = "You";
+  newComment.querySelector("[data-time]").textContent = "방금 전";
+  newComment.querySelector("[data-comment]").textContent = text;
+  newComment.querySelector("[data-likes]").textContent = "0";
+  newComment.querySelector("[data-dislikes]").textContent = "0";
+
+  commentContainer.prepend(newComment);
+  messageInput.value = "";
+}
+
+addCommentBtn.addEventListener("click", addComment);
+
+messageInput.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    e.preventDefault();
+    addComment();
+  }
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const params = new URLSearchParams(window.location.search);
+  const videoId = params.get("id");
+  const iframe = document.getElementById("youtube-frame");
+  const videoTitle = document.getElementById("youtube-title");
+  const videoIcon = document.getElementById("youtube-icon");
+  const videoViews = document.getElementById("owner-views");
+  const videoUploadDate = document.getElementById("owner-uploadDate");
+  const videoUploader = document.getElementById("youtube-uploader");
+  const videoSubs = document.getElementById("youtube-subs");
+  const videofullText = document.getElementById("owner-text");
+
+
+  fetch("../data/package.json")
+    .then(res => res.json())
+    .then(data => {
+      // 1. iframe에 영상 삽입 (video.html?id=... 페이지인 경우)
+      if (videoId) {
+        const video = data.find(v => v.videoId === videoId);
+        if (video) {
+          if (iframe) {
+            iframe.src = video.iframeurl;
+          }
+        } else {
+          console.error("해당 영상 정보를 찾을 수 없습니다.");
+        }
+
+        videoTitle.textContent = video.title;
+        videoIcon.src = video.icon;
+        videoViews.textContent = "조회수 " + video.views;
+        videoUploadDate.textContent = video.uploadDate;
+
+        videoUploader.textContent = video.uploader;
+        videoSubs.textContent = video.subscriberCount || ""; // 없으면 빈 문자열
+        videofullText.textContent = video.fullText;
+
+      }
+
+      // 2. 목록 카드 생성 (video-list가 있는 경우)
+      const container = document.getElementById("video-list");
+      const template = document.getElementById("card-template");
+
+      if (container && template) {
+        data.forEach(video => {
+          const card = template.cloneNode(true);
+          card.removeAttribute("id");
+          card.style.display = "";
+
+          card.querySelector("a").href = `video.html?id=${video.videoId}`;
+          card.querySelector("[data-thumbnail]").src = `https://img.youtube.com/vi/${video.videoId}/mqdefault.jpg`;
+          card.querySelector("[data-title]").textContent = video.title;
+          card.querySelector("[data-uploader]").textContent = video.uploader;
+          card.querySelector("[data-meta]").textContent = `조회수 ${video.views} • ${video.uploadDate}`;
+
+          container.appendChild(card);
+        });
+      }
+    })
+    .catch(err => console.error("JSON 로딩 실패:", err));
+});

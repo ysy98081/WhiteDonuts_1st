@@ -47,7 +47,7 @@
             10<span class="visually-hidden">unread messages</span>
           </span>
           </button>
-          <button class="card-icon" type="button" data-bs-toggle="modal" data-bs-target="#userInfoModal">
+          <button class="non-btn" type="button" data-bs-toggle="modal" data-bs-target="#userInfoModal">
             <img class="card-icon" src="../img/dory.jpg">
           </button>
         </div>
@@ -64,7 +64,7 @@
         <button type="button" id="closeSidebarBtn" class="sidebar-close-btn">
           <span class="toggler-icon"><img src="../img/menu.png" alt="" style="height: 35px;"></span>
         </button>
-        <a class="navbar-brand mb-0" href="main.html">
+        <a class="navbar-brand mb-0" href="../index.html">
           <img src="../img/logo.png" alt="Logo" style="height: 30px;">
         </a>
       </li>
@@ -72,7 +72,7 @@
   </div>
   <div class="sidebar-slide-content">
     <ul class="nav flex-column">
-      <li class="nav-item sidebar-slide-item"><a class="navbar-brand" href="main.html" title="홈">
+      <li class="nav-item sidebar-slide-item"><a class="navbar-brand" href="../index.html" title="홈">
         <img class="button-img" src="../img/home.png">홈</a></li>
       <li class="nav-item sidebar-slide-item"><a class="navbar-brand" href="#" title="Shorts">
         <img class="button-img" src="../img/shorts.png" alt="Shorts">Shorts</a>
@@ -193,130 +193,113 @@
     <div class="player">
       <div class="player-inner">
         <div class="">
-          <iframe src="https://www.youtube.com/embed/j2LZmDCCpKY?si=OSXh488obrkR1xd8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <iframe id="youtube-frame" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
       </div>
     </div>
 
     <div class="below">
-      <div class="title row row-cols-1">
-        <h5>[4K] 고추잠자리 - 너라는 별 Official M/V</h5>
+      <div class="title row row-cols-1 g-0">
+        <h5 class="fw-bold" id="youtube-title"></h5>
         <div class="channel-info d-flex align-items-center gap-3">
           <button class="card-icon" type="button">
-            <img class="card-icon" src="../img/beautifulnerd.jpg">
+            <img class="card-icon" src="" id="youtube-icon">
           </button>
           <div class="channel-text">
             <a href="#" class="border-light text-decoration-none text-dark">
-              <h6 class="card-title mb-1">뷰티풀너드</h6>
-              <p class="card-text">구독자 135만명</p>
+              <h6 class="card-title mb-1" id="youtube-uploader"></h6>
+              <p class="card-text" id="youtube-subs"></p>
             </a>
           </div>
           <button class="btn btn-dark subscribe-btn" type="button">구독</button>
-          <div class="ms-auto">
-            <button class="thumbup-btn" type="button">
-              <img src="../img/thumb_up.png" title="이 동영상이 마음에 듭니다.">
-            </button>
-            <button class="thumbdown-btn" type="button">
-              <img src="../img/thumb_down.png" title="이 동영상이 마음에 들지 않습니다.">
-            </button>
+          <div class="ms-auto d-flex align-items-center gap-3">
+            <div class="d-flex align-items-center">
+              <button class="thumbup-btn" id="thumbupbtn" type="button">
+                <span class="thumb-content d-flex align-items-center gap-1">
+                  <span id="thumbup-num">100</span>
+                  <img src="../img/thumb_up.png" alt="좋아요">
+                </span>
+              </button>
+
+              <div class="vr"></div>
+
+              <button class="thumbdown-btn" id="thumbdownbtn" type="button">
+                <span class="thumb-content d-flex align-items-center gap-1">
+                  <img src="../img/thumb_down.png" alt="싫어요">
+                  <span id="thumbdown-num">100</span>
+                </span>
+              </button>
+            </div>
+            <button class="make-btn" type="button">
+              <img src="../img/share.png" title="공유">공유</button>
+            <button class="make-btn" type="button">
+              <img src="../img/save.png" title="저장">저장</button>
+            <button class="make-btn" type="button">
+              <img src="../img/more.png"></button>
           </div>
-          <button class="make-btn" type="button">
-            <img src="../img/share.png" title="공유">공유</button>
-          <button class="make-btn" type="button">
-            <img src="../img/save.png" title="저장">저장</button>
-          <button class="make-btn" type="button">
-            <img src="../img/more.png"></button>
         </div>
       </div>
       <div class="owner">
         <div class="owner-inner">
-          <h6>조회수 1,972,873회  2025. 4. 6.</h6>
-          <p class="owner-text " id="owner-text">
-            MV Directed by Kwon Meen
-            Assistant Director & Producer Jang Yejin
-
-            DOP
-            Kim Jeehoo
-
-            Assistant Camera
-            MOGEOSU
-
-            Design
-            Lee Jungmin
-
-            Artist Manger
-            Choi Wooseong
-            Yang Namsu
-            Kim Kibeom
-
-            Documentary team
-            MOGEOSU
-
-            Hair & Make up
-            Areum
-            竹内 未夢
-
-            Special Thanks to
-            Parkryeok
-
-            MUSIC CREDIT
-
-            Lyrics by Choi Jaewoo, Gist, HOON, GORAE
-            Composed by TOIL, Pateko, HAAN, Gist, HOON
-            Arranged by TOIL, Pateko, HAAN
-
-            Piano Lee Myungho
-            Bass Park Chanmin
-            String Lim Woobin
-            Guitar Choi Yeonghun
-            Drum Lee Myungho, TOIL
-            Percussion HAAN
-          </p>
+          <div class="d-flex align-items-center gap-3">
+            <p id="owner-views"></p><p id="owner-uploadDate"></p>
+          </div>
+          <div class="owner-text" id="owner-text"></div>
           <button class="show-btn fw-bold" id="showMore" onclick="showMore()">더보기</button>
           <button class="show-btn fw-bold" id="showhidden" onclick="showhidden()" style="display: none;">간략히</button>
         </div>
       </div>
-      <div class="actions">
-        <div class="actions-top d-flex align-items-center gap-3">
-          <h4 style="margin: 0 32px 0 0;">댓글 383개</h4>
-          <p class="" type="button">
-            <img class="" src="../img/sort.png">정렬 기준
-          </p>
+      <div class="comment">
+        <div class="comment-header align-items-center row">
+          <div class="actions-top d-flex align-items-center gap-3">
+            <div>
+              <h5 class="fw-bold" style="margin: 0 32px 0 0;">댓글 100개</h5>
+            </div>
+            <div>
+              <img class="" src="../img/sort.png" style="margin-right: 8px" title="댓글 정렬">정렬 기준
+            </div>
+          </div>
+          <div class="d-flex align-items-center mb-3">
+            <img src="../img/dory.jpg" class="card-icon">
+            <input type="text" id="messageInput" class="form-control border-0 border-bottom"
+                   placeholder="댓글 추가..." style="box-shadow: none;">
+            <button id="addCommentBtn" class="non-btn" style="width: 80px">등록</button>
+          </div>
+          <div id="commentList" class="d-flex flex-column"></div>
         </div>
-
-        <div class="input-material">
-          <img class="card-icon" src="../img/dory.jpg">
-          <input type="text" class="" id="name-field" required>
+        <div id="comment-container">
+          <div class="channel-text comment-template gap-3" id="comment-template">
+            <button class="non-btn" type="button">
+              <img class="card-icon" src="" data-avatar>
+            </button>
+            <div>
+              <div class="d-flex align-items-center gap-2">
+                <h6 class="card-title mb-1" data-user></h6>
+                <span data-time class="text-muted small"></span>
+              </div>
+              <span data-comment></span>
+              <div>
+                <img class="comment-icon" src="../img/thumb_up.png" title="좋아요">
+                <span class="card-text" data-likes>0</span>
+                <img class="comment-icon" src="../img/thumb_down.png" title="싫어요">
+                <span class="card-text" data-dislikes>0</span>
+                <button class="sidebar-close-btn" type="button" title="알림">답글</button>
+              </div>
+            </div>
+          </div>
         </div>
-
-
-<!--        <div class="channel-info d-flex align-items-center gap-3">-->
-<!--          <button class="card-icon" type="button">-->
-<!--            <img class="card-icon" src="../img/beautifulnerd.jpg">-->
-<!--          </button>-->
-<!--          <div class="channel-text">-->
-<!--            <a href="#" class="border-light text-decoration-none text-dark">-->
-<!--              <h6 class="card-title mb-1">뷰티풀너드</h6>-->
-<!--              <p class="card-text">구독자 135만명</p>-->
-<!--            </a>-->
-<!--          </div>-->
-<!--          <button class="btn btn-dark subscribe-btn" type="button">구독</button>-->
-<!--        </div>-->
-      </div>
-      </div>
-      <div class="description">
-
       </div>
     </div>
+  </div>
 
   <div class="secondary">
     <div class="item">
-      <div class="secondary-video-scroll" id="video-list" style="max-width: 540px;">
+      <div class="secondary-video-scroll" id="video-list">
         <div class="card" id="card-template" style="display: none;">
           <img src="" class="card-img-top" data-thumbnail>
           <div class="">
             <a href="#" class="border-light" style="text-decoration: none; color: inherit;">
-              <h6 class="card-title" data-title></h6>
+              <h6 class="card-title line-clamp" id="secondary-title" data-title></h6>
               <p class="card-text" data-uploader></p>
               <p class="card-text" data-meta></p>
             </a>

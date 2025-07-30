@@ -1,33 +1,231 @@
-<!doctype html>
-<html class="no-js" lang="">
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
-  <link rel="stylesheet" href="css/style.css">
-  <meta name="description" content="">
-
-  <meta property="og:title" content="">
-  <meta property="og:type" content="">
-  <meta property="og:url" content="">
-  <meta property="og:image" content="">
-  <meta property="og:image:alt" content="">
-
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" href="/icon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="icon.png">
-
-  <link rel="manifest" href="site.webmanifest">
-  <meta name="theme-color" content="#fafafa">
+  <meta charset="UTF-8">
+  <title>WHITE DONUTS</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../css/total.css" rel="stylesheet">
+  <link href="../css/main.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </head>
-
 <body>
 
-  <!-- Add your site or application content here -->
-  <p>Hello world! This is HTML5 Boilerplate.</p>
-  <script src="js/video.js"></script>
+<div>
+  <header class="header d-flex">
+    <!-- 네비게이션 바 -->
+    <nav class="navbar navbar-light fixed-top">
+      <div class="container-fluid d-flex flex-nowrap align-items-center justify-content-between">
+        <!-- 왼쪽: 로고 + 토글버튼 -->
+        <div class="d-flex align-items-center flex-shrink-0">
+          <button class="sidebar-close-btn" type="button" id="toggleSidebar">
+            <span class="toggler-icon"><img src="../img/menu.png" alt="" style="height: 35px;"></span>
+          </button>
+          <a class="navbar-brand mb-0" href="#section1">
+            <img src="../img/logo.png" alt="Logo" style="height: 30px;">
+          </a>
+        </div>
+        <div class="d-flex align-items-center justify-content-center w-100 px-3">
+          <div class="input-group search-bar flex-grow-1 me-3">
+            <input type="search" class="form-control" placeholder="검색" aria-describedby="button-addon2">
+            <button class="search-btn btn btn-outline-secondary" type="button" id="button-addon2" title="검색">
+              <img src="../img/search.png" alt="">
+            </button>
+          </div>
+          <button class="make-btn" type="button" title="음성으로 검색">
+            <img src="../img/mic.png" alt="">
+          </button>
+        </div>
 
+        <!-- 오른쪽: 버튼들 -->
+        <div class="d-flex align-items-center flex-shrink-0 " style="gap: 8px; white-space: nowrap;">
+          <button class="d-flex align-items-center justify-content-center make-btn" type="button" style="width: 100px;">
+            <img src="../img/add.png" alt="">만들기</button>
+          <button class="sidebar-close-btn" type="button" title="알림">
+            <img src="../img/alarm.png" alt="알림">
+            <span class="position-absolute top-40 start-60 translate-middle badge rounded-pill bg-danger">
+            10<span class="visually-hidden">unread messages</span>
+          </span>
+          </button>
+          <button class="non-btn" type="button" data-bs-toggle="modal" data-bs-target="#userInfoModal">
+            <img class="card-icon" src="../img/dory.jpg">
+          </button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+</div>
+<!-- 슬라이드 사이드바 -->
+<div class="sidebar-slide" id="sidebarMenu">
+  <div class="sidebar-slide-logo">
+    <ul class="nav flex-column">
+      <li class="nav-item d-flex align-items-center px-2">
+        <button type="button" id="closeSidebarBtn" class="sidebar-close-btn">
+          <span class="toggler-icon"><img src="../img/menu.png" alt="" style="height: 35px;"></span>
+        </button>
+        <a class="navbar-brand mb-0" onclick="location.reload()">
+          <img src="../img/logo.png" alt="Logo" style="height: 30px;">
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="sidebar-slide-content">
+    <ul class="nav flex-column">
+      <li class="nav-item sidebar-slide-item"><a class="navbar-brand" onclick="location.reload()" title="홈">
+        <img class="button-img" src="../img/home.png">홈</a></li>
+      <li class="nav-item sidebar-slide-item"><a class="navbar-brand" href="#" title="Shorts">
+        <img class="button-img" src="../img/shorts.png" alt="Shorts">Shorts</a>
+      </li>
+      <li class="nav-item sidebar-slide-item"><a class="navbar-brand" href="html/feed.html" title="구독">
+        <img class="button-img" src="../img/subscriptions.png" alt="구독">구독</a>
+      </li>
+    </ul>
+    <ul class="nav flex-column menu-inline">
+      <li class="nav-item sidebar-slide-item fw-bold"><a class="navbar-brand" href="#" title="내 페이지">내 페이지 <img src="../img/chevron_right.png"></a></li>
+      <li class="nav-item sidebar-slide-item"><a class="navbar-brand" href="#" title="시청기록">
+        <img class="button-img" src="../img/history.png" alt="시청기록">시청기록</a></li>
+      <li class="nav-item sidebar-slide-item"><a class="navbar-brand" href="#" title="재생목록">
+        <img class="button-img" src="../img/playlist.png" alt="재생목록">재생목록</a></li>
+      <li class="nav-item sidebar-slide-item"><a class="navbar-brand" href="#" title="내 동영상">
+        <img class="button-img" src="../img/video.png" alt="내 동영상">내 동영상</a></li>
+      <li class="nav-item sidebar-slide-item"><a class="navbar-brand" href="#" title="나중에 볼 동영상">
+        <img class="button-img" src="../img/schedule.png" alt="나중에 볼 동영상">나중에 볼 동영상</a></li>
+      <li class="nav-item sidebar-slide-item"><a class="navbar-brand" href="#" title="좋아요 표시한 동영상">
+        <img class="button-img" src="../img/thumb_up.png" alt="좋아요 표시한 동영상">좋아요 표시한 동영상</a></li>
+    </ul>
+    <ul class="nav flex-column menu-inline">
+      <li class="nav-item sidebar-slide-item"><a class="navbar-brand" href="#">구독</a></li>
+    </ul>
+    <ul class="nav flex-column menu-inline">
+      <li class="nav-item sidebar-slide-item">탐색</li>
+      <li class="nav-item sidebar-slide-item"><a class="navbar-brand" href="#" title="인기 급상승">
+        <img class="button-img" src="../img/fire.png" alt="인기 급상승">인기 급상승</a></li>
+      <li class="nav-item sidebar-slide-item"><a class="navbar-brand" href="#" title="쇼핑">
+        <img class="button-img" src="../img/shopping.png" alt="쇼핑">쇼핑</a></li>
+      <li class="nav-item sidebar-slide-item"><a class="navbar-brand" href="#" title="음악">
+        <img class="button-img" src="../img/music.png" alt="음악">음악</a></li>
+      <li class="nav-item sidebar-slide-item"><a class="navbar-brand" href="#" title="영화">
+        <img class="button-img" src="../img/movie.png" alt="영화">영화</a></li>
+      <li class="nav-item sidebar-slide-item"><a class="navbar-brand" href="#" title="실시간">
+        <img class="button-img" src="../img/sensors.png" alt="실시간">실시간</a></li>
+      <li class="nav-item sidebar-slide-item"><a class="navbar-brand" href="#" title="게임">
+        <img class="button-img" src="../img/game.png" alt="게임">게임</a></li>
+      <li class="nav-item sidebar-slide-item"><a class="navbar-brand" href="#" title="스포츠">
+        <img class="button-img" src="../img/sports.png" alt="스포츠">스포츠</a></li>
+      <li class="nav-item sidebar-slide-item"><a class="navbar-brand" href="#" title="학습 프로그램">
+        <img class="button-img" src="../img/school.png" alt="학습 프로그램">학습 프로그램</a></li>
+      <li class="nav-item sidebar-slide-item"><a class="navbar-brand" href="#" title="팟케스트">
+        <img class="button-img" src="../img/podcasts.png" alt="팟케스트">팟케스트</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- 모달 -->
+<div class="modal fade" id="userInfoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document" style="float: right; width: 350px; padding-top: 25px">
+    <div class="modal-content">
+      <div class="modal-header" style="border: 0;">
+        <div class="col col-md-auto" style="padding-right: 20px;">
+          <img class="card-icon" src="../img/dory.jpg">
+        </div>
+        <div class="col">
+          <h5 class="modal-title">aj choe</h5>
+          <h5 class="modal-title">@ajchoe</h5>
+          <a href="" class="border-light" style="text-decoration: none;">내 채널 보기</a>
+        </div>
+      </div>
+      <div class="modal-body" style="padding: 0;">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col menu-line">
+              <p><img class="button-img" src="../img/user_attributes.png">Google 계정</p>
+              <p><img class="button-img" src="../img/switch_account.png">계정 전환<img class="float-end" src="../img/chevron_right.png"></p>
+              <p><img class="button-img" src="../img/logout.png">로그아웃</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col menu-line">
+              <p><img class="button-img" src="../img/youtube_activity.png">YouTube 스튜디오</p>
+              <p><img class="button-img" src="../img/paid.png">구매 항목 및 멤버십</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col menu-line">
+              <p><img class="button-img" src="../img/shield_person.png">YouTube의 내 데이터</p>
+              <p><img class="button-img" src="../img/design.png">디자인: 기기 테마<img class="float-end" src="../img/chevron_right.png"></p>
+              <p><img class="button-img" src="../img/translate.png">언어: 한국어<img class="float-end" src="../img/chevron_right.png"></p>
+              <p><img class="button-img" src="../img/admin_panel_settings.png">제한모드: 사용 안함<img class="float-end" src="../img/chevron_right.png"></p>
+              <p><img class="button-img" src="../img/language.png">위치: 한국<img class="float-end" src="../img/chevron_right.png"></p>
+              <p><img class="button-img" src="../img/keyboard.png">단축키</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col menu-line">
+              <p><img class="button-img" src="../img/settings.png">설정</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col menu-line">
+              <p><img class="button-img" src="../img/help.png">고객센터</p>
+              <p><img class="button-img" src="../img/feedback.png">의견 보내기</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="section1"></div>
+
+<div class="contents d-flex">
+  <div class="row g-0">
+    <!-- 왼쪽 사이드바 -->
+    <div class="main-navbar">
+      <a class="main-navbar-item" onclick="location.reload()" title="홈"><img src="../img/home.png"><br>홈</a>
+      <a class="main-navbar-item" href="#" title="Shorts"><img src="../img/shorts.png"><br>Shorts</a>
+      <a class="main-navbar-item" href="html/feed.html" title="구독"><img src="../img/subscriptions.png"><br>구독</a>
+      <a class="main-navbar-item" href="#" title="내 페이지"><img src="../img/my.png"><br>내 페이지</a>
+    </div>
+
+    <!-- 영상 썸네일 카드 영역 카드 8개 이상 -->
+    <div class="main-video" style="padding-top: 60px;">
+      <div class="main-video-header row">
+        <div class="main-video-button">
+          <button type="button" class="btn btn-dark btn-sm">전체</button>
+          <button type="button" class="btn btn-light btn-sm">음악</button>
+          <button type="button" class="btn btn-light btn-sm">팟케스트</button>
+          <button type="button" class="btn btn-light btn-sm">믹스</button>
+          <button type="button" class="btn btn-light btn-sm">라이브</button>
+          <button type="button" class="btn btn-light btn-sm">최근에 업로드된 동영상</button>
+          <button type="button" class="btn btn-light btn-sm">감상한 동영상</button>
+          <button type="button" class="btn btn-light btn-sm">새로운 맞춤 동영상</button>
+        </div>
+      </div>
+
+      <div class="main-video-scroll row row-cols-1" id="video-list">
+        <!-- 템플릿 카드 -->
+        <div class="card col-lg-4 col-md-6" id="card-template" style="display: none;">
+          <a href="#" class="border-light">
+            <img src="" class="card-img-top" data-thumbnail>
+            <div class="card-body row">
+              <div class="col col-md-auto">
+                <img class="card-icon" src="" data-icon>
+              </div>
+              <div class="col">
+                <h5 class="card-title" data-title></h5>
+                <p class="card-text" data-uploader></p>
+                <p class="card-text" data-meta></p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="sidebarOverlay" class="sidebar-overlay"></div>
+</div>
+<script src="../js/total.js"></script>
+<script src="../js/main.js"></script>
 </body>
-
 </html>
