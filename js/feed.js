@@ -10,7 +10,7 @@ fetch("../data/package.json")
       card.style.display = ""; // 보이게 설정
 
       // 요소 채우기
-      card.querySelector("a").href = `html/video.html?id=${video.videoId}`;
+      card.querySelector("a").href = `./video.html?id=${video.videoId}`;
       card.querySelector("[data-thumbnail]").src = `https://img.youtube.com/vi/${video.videoId}/mqdefault.jpg`;
       card.querySelector("[data-icon]").src = video.icon;
       card.querySelector("[data-title]").textContent = video.title;
