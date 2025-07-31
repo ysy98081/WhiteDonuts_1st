@@ -31,7 +31,7 @@
               <img src="img/search.png" alt="">
             </button>
           </div>
-          <button class="make-btn" type="button" title="음성으로 검색">
+          <button class="make-btn-little" type="button" title="음성으로 검색">
             <img src="img/mic.png" alt="">
           </button>
         </div>
@@ -205,10 +205,12 @@
       </div>
 
       <div class="main-video-scroll row row-cols-1" id="video-list">
-        <!-- 템플릿 카드 -->
         <div class="card col-lg-4 col-md-6" id="card-template" style="display: none;">
-          <a href="#" class="border-light">
-            <img src="" class="card-img-top" data-thumbnail>
+          <a href="#" class="border-light video-card">
+            <div class="video-container">
+              <img src="" class="card-img-top" data-thumbnail>
+              <div class="iframe-wrapper" data-iframe></div>
+            </div>
             <div class="card-body row">
               <div class="col col-md-auto">
                 <img class="card-icon" src="" data-icon>

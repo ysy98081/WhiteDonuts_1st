@@ -176,8 +176,24 @@ body.modal-open {
   border-radius: 0 40px 40px 0;
 }
 
-/* 기타 버튼 (maid-btn) */
+/* 기타 버튼 */
 .make-btn {
+  background-color: #f8f9fa;
+  border: 1px solid #f8f9fa;
+  border-radius: 40px;
+  height: 40px;
+  width: 80px;
+  text-align: center;
+}
+
+.make-btn:hover {
+  background-color: #e1e1e1;
+  border-radius: 40px;
+  height: 40px;
+  width: 80px;
+}
+
+.make-btn-little {
   background-color: #f8f9fa;
   border: 1px solid #f8f9fa;
   border-radius: 40px;
@@ -185,7 +201,7 @@ body.modal-open {
   text-align: center;
 }
 
-.make-btn:hover {
+.make-btn-little:hover {
   background-color: #e1e1e1;
   border-radius: 40px;
   height: 40px;

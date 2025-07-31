@@ -31,7 +31,7 @@
               <img src="../img/search.png" alt="">
             </button>
           </div>
-          <button class="make-btn" type="button" title="음성으로 검색">
+          <button class="make-btn-little" type="button" title="음성으로 검색">
             <img src="../img/mic.png" alt="">
           </button>
         </div>
@@ -194,20 +194,22 @@
         <h5 class="fw-bolder">최신순</h5>
         <div class="d-flex align-items-center">
           <a href="" class="d-flex align-items-center justify-content-center border-light feedback-btn" style="text-decoration: none; margin-right: 10px; width: 80px;">관리</a>
-          <button class="sidebar-close-btn" type="button">
-            <img src="../img/grid_view.png" style="height: 30px;">
-          </button>
-          <button class="sidebar-close-btn" type="button">
+          <a class="sidebar-close-btn" type="button" title="바둑판식" style="">
+            <img src="../img/grid_view.png" style="height: 30px;" >
+          </a>
+          <a class="sidebar-close-btn" type="button" title="목록">
             <img src="../img/list.png" style="height: 30px;">
-          </button>
+          </a>
         </div>
       </div>
 
       <div class="main-video-scroll row row-cols-1" id="video-list">
-        <!-- 템플릿 카드 -->
         <div class="card col-lg-4 col-md-6" id="card-template" style="display: none;">
-          <a href="#" class="border-light">
-            <img src="" class="card-img-top" data-thumbnail>
+          <a href="#" class="border-light video-card">
+            <div class="video-container">
+              <img src="" class="card-img-top" data-thumbnail>
+              <div class="iframe-wrapper" data-iframe></div>
+            </div>
             <div class="card-body row">
               <div class="col col-md-auto">
                 <img class="card-icon" src="" data-icon>

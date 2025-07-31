@@ -1,26 +1,34 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const params = new URLSearchParams(window.location.search);
+  const videoId = params.get("id");
+
   fetch("../data/comment.json")
     .then(res => res.json())
     .then(data => {
-      const list = document.getElementById("comment-container");
-      const template = document.getElementById("comment-template");
+      if (videoId) {
+        console.log("현재 videoId:", videoId);
+        const list = document.getElementById("comment-container");
+        const template = document.getElementById("comment-template");
 
-      data.forEach(comment => {
-        const commentlist = template.cloneNode(true);
-        commentlist.removeAttribute("id");
-        commentlist.style.display = "";
-        commentlist.classList.add("d-flex", "align-items-start");
+        // 해당 videoId에 맞는 댓글만 필터링
+        const videoComments = data.filter(comment => comment.videoId === videoId);
 
-        // 요소 채우기 - 속성 이름 일치 필수!
-        commentlist.querySelector("[data-user]").textContent = comment.user;
-        commentlist.querySelector("[data-avatar]").setAttribute("src", comment.avatar);
-        commentlist.querySelector("[data-comment]").textContent = comment.comment;
-        commentlist.querySelector("[data-likes]").textContent = comment.likes;
-        commentlist.querySelector("[data-dislikes]").textContent = comment.dislikes;
-        commentlist.querySelector("[data-time]").textContent = comment.time;
+        videoComments.forEach(comment => {
+          const commentlist = template.cloneNode(true);
+          commentlist.removeAttribute("id");
+          commentlist.style.display = "";
+          commentlist.classList.add("d-flex", "align-items-start");
 
-        list.appendChild(commentlist);
-      });
+          commentlist.querySelector("[data-user]").textContent = comment.user;
+          commentlist.querySelector("[data-avatar]").setAttribute("src", comment.avatar);
+          commentlist.querySelector("[data-comment]").textContent = comment.comment;
+          commentlist.querySelector("[data-likes]").textContent = comment.likes;
+          commentlist.querySelector("[data-dislikes]").textContent = comment.dislikes;
+          commentlist.querySelector("[data-time]").textContent = comment.time;
+
+          list.appendChild(commentlist);
+        });
+      }
     })
     .catch(err => console.error("JSON 로딩 실패:", err));
 });
@@ -181,6 +189,25 @@ document.addEventListener("DOMContentLoaded", () => {
           card.querySelector("[data-title]").textContent = video.title;
           card.querySelector("[data-uploader]").textContent = video.uploader;
           card.querySelector("[data-meta]").textContent = `조회수 ${video.views} • ${video.uploadDate}`;
+
+          // iframe hover 로직
+          const wrapper = card.querySelector("[data-iframe]");
+          const videoCard = card.querySelector(".video-card");
+
+          videoCard.addEventListener("mouseenter", () => {
+            const iframe = document.createElement("iframe");
+            iframe.src = video.iframeurl + "&autoplay=1&mute=1&controls=0&rel=0&playsinline=1&modestbranding=1&showinfo=0";
+            iframe.setAttribute("allow", "autoplay; encrypted-media");
+            iframe.setAttribute("allowfullscreen", "");
+            iframe.style.width = "100%";
+            iframe.style.height = "100%";
+            wrapper.innerHTML = ""; // 중복 방지
+            wrapper.appendChild(iframe);
+          });
+
+          videoCard.addEventListener("mouseleave", () => {
+            wrapper.innerHTML = "";
+          });
 
           container.appendChild(card);
         });

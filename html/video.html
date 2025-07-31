@@ -6,16 +6,15 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <link href="../css/total.css" rel="stylesheet">
+  <link href="../css/main.css" rel="stylesheet">
   <link href="../css/video.css" rel="stylesheet">
 </head>
 <body>
 
 <div>
   <header class="header d-flex">
-    <!-- 네비게이션 바 -->
     <nav class="navbar navbar-light fixed-top">
       <div class="container-fluid d-flex flex-nowrap align-items-center justify-content-between">
-        <!-- 왼쪽: 로고 + 토글버튼 -->
         <div class="d-flex align-items-center flex-shrink-0">
           <button class="sidebar-close-btn" type="button" id="toggleSidebar">
             <span class="toggler-icon"><img src="../img/menu.png" alt="" style="height: 35px;"></span>
@@ -31,7 +30,7 @@
               <img src="../img/search.png" alt="">
             </button>
           </div>
-          <button class="make-btn" type="button" title="음성으로 검색">
+          <button class="make-btn-little" type="button" title="음성으로 검색">
             <img src="../img/mic.png" alt="">
           </button>
         </div>
@@ -193,7 +192,7 @@
     <div class="player">
       <div class="player-inner">
         <div class="">
-          <iframe id="youtube-frame" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <iframe id="youtube-frame" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
       </div>
     </div>
@@ -201,30 +200,30 @@
     <div class="below">
       <div class="title row row-cols-1 g-0">
         <h5 class="fw-bold" id="youtube-title"></h5>
-        <div class="channel-info d-flex align-items-center gap-3">
-          <button class="card-icon" type="button">
-            <img class="card-icon" src="" id="youtube-icon">
-          </button>
-          <div class="channel-text">
-            <a href="#" class="border-light text-decoration-none text-dark">
-              <h6 class="card-title mb-1" id="youtube-uploader"></h6>
-              <p class="card-text" id="youtube-subs"></p>
-            </a>
+        <div class="channel-info d-flex flex-row flex-wrap justify-content-between align-items-center mt-3">
+          <div class="d-flex align-items-center gap-2 flex-shrink-1">
+            <button class="card-icon" type="button">
+              <img class="card-icon" src="" id="youtube-icon">
+            </button>
+            <div class="channel-text">
+              <a href="#" class="border-light text-decoration-none text-dark">
+                <h6 class="card-title mb-1" id="youtube-uploader"></h6>
+                <p class="card-text" id="youtube-subs"></p>
+              </a>
+            </div>
+            <button class="btn btn-dark subscribe-btn" type="button">구독</button>
           </div>
-          <button class="btn btn-dark subscribe-btn" type="button">구독</button>
-          <div class="ms-auto d-flex align-items-center gap-3">
+          <div class="d-flex align-items-center flex-wrap gap-2 flex-shrink-0">
             <div class="d-flex align-items-center">
-              <button class="thumbup-btn" id="thumbupbtn" type="button">
-                <span class="thumb-content d-flex align-items-center gap-1">
+              <button class="thumbup-btn d-flex align-items-center" id="thumbupbtn" type="button">
+                <span class="thumb-content">
                   <span id="thumbup-num">100</span>
                   <img src="../img/thumb_up.png" alt="좋아요">
                 </span>
               </button>
-
-              <div class="vr"></div>
-
-              <button class="thumbdown-btn" id="thumbdownbtn" type="button">
-                <span class="thumb-content d-flex align-items-center gap-1">
+              <div class="thumb-divider"></div>
+              <button class="thumbdown-btn d-flex align-items-center" id="thumbdownbtn" type="button">
+                <span class="thumb-content">
                   <img src="../img/thumb_down.png" alt="싫어요">
                   <span id="thumbdown-num">100</span>
                 </span>
@@ -234,7 +233,7 @@
               <img src="../img/share.png" title="공유">공유</button>
             <button class="make-btn" type="button">
               <img src="../img/save.png" title="저장">저장</button>
-            <button class="make-btn" type="button">
+            <button class="make-btn-little" type="button">
               <img src="../img/more.png"></button>
           </div>
         </div>
@@ -249,46 +248,6 @@
           <button class="show-btn fw-bold" id="showhidden" onclick="showhidden()" style="display: none;">간략히</button>
         </div>
       </div>
-      <div class="comment">
-        <div class="comment-header align-items-center row">
-          <div class="actions-top d-flex align-items-center gap-3">
-            <div>
-              <h5 class="fw-bold" style="margin: 0 32px 0 0;">댓글 100개</h5>
-            </div>
-            <div>
-              <img class="" src="../img/sort.png" style="margin-right: 8px" title="댓글 정렬">정렬 기준
-            </div>
-          </div>
-          <div class="d-flex align-items-center mb-3">
-            <img src="../img/dory.jpg" class="card-icon">
-            <input type="text" id="messageInput" class="form-control border-0 border-bottom"
-                   placeholder="댓글 추가..." style="box-shadow: none;">
-            <button id="addCommentBtn" class="non-btn" style="width: 80px">등록</button>
-          </div>
-          <div id="commentList" class="d-flex flex-column"></div>
-        </div>
-        <div id="comment-container">
-          <div class="channel-text comment-template gap-3" id="comment-template">
-            <button class="non-btn" type="button">
-              <img class="card-icon" src="" data-avatar>
-            </button>
-            <div>
-              <div class="d-flex align-items-center gap-2">
-                <h6 class="card-title mb-1" data-user></h6>
-                <span data-time class="text-muted small"></span>
-              </div>
-              <span data-comment></span>
-              <div>
-                <img class="comment-icon" src="../img/thumb_up.png" title="좋아요">
-                <span class="card-text" data-likes>0</span>
-                <img class="comment-icon" src="../img/thumb_down.png" title="싫어요">
-                <span class="card-text" data-dislikes>0</span>
-                <button class="sidebar-close-btn" type="button" title="알림">답글</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 
@@ -296,13 +255,63 @@
     <div class="item">
       <div class="secondary-video-scroll" id="video-list">
         <div class="card" id="card-template" style="display: none;">
-          <img src="" class="card-img-top" data-thumbnail>
-          <div class="">
-            <a href="#" class="border-light" style="text-decoration: none; color: inherit;">
-              <h6 class="card-title line-clamp" id="secondary-title" data-title></h6>
-              <p class="card-text" data-uploader></p>
-              <p class="card-text" data-meta></p>
-            </a>
+          <a href="#" class="border-light video-card">
+            <div class="card-body d-flex align-items-start">
+              <div class="video-container me-3" style="flex-shrink: 0;">
+                <img src="" class="card-img-top" data-thumbnail>
+                <div class="iframe-wrapper" data-iframe></div>
+              </div>
+              <div>
+                <h6 class="card-title line-clamp" data-title></h6>
+                <p class="card-text" data-uploader></p>
+                <p class="card-text" data-meta></p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="comment">
+    <div class="comment-header align-items-center row">
+      <div class="actions-top d-flex align-items-center gap-3">
+        <div>
+          <h5 class="fw-bold" style="margin: 0 32px 0 0;">댓글 100개</h5>
+        </div>
+        <div>
+          <img class="" src="../img/sort.png" style="margin-right: 8px" title="댓글 정렬">정렬 기준
+        </div>
+      </div>
+      <div class="d-flex align-items-center mb-3">
+        <img src="../img/dory.jpg" class="card-icon">
+        <input type="text" id="messageInput" class="form-control border-0 border-bottom"
+               placeholder="댓글 추가..." style="box-shadow: none;">
+        <button id="addCommentBtn" class="non-btn" style="width: 80px">등록</button>
+      </div>
+      <div id="commentList" class="d-flex flex-column"></div>
+    </div>
+    <div id="comment-container">
+      <div class="channel-text comment-template gap-3" id="comment-template">
+        <button class="non-btn" type="button">
+          <img class="card-icon" src="" data-avatar>
+        </button>
+        <div>
+          <div class="d-flex align-items-center gap-2">
+            <h6 class="card-title mb-1" data-user></h6>
+            <span data-time class="text-muted small"></span>
+          </div>
+          <span class="comment-line" data-comment></span>
+          <div class="d-flex align-items-center gap-2">
+            <div class="comment-icon">
+              <img src="../img/thumb_up.png" title="좋아요">
+            </div>
+            <span class="card-text" data-likes>0</span>
+            <div class="comment-icon">
+              <img src="../img/thumb_down.png" title="싫어요">
+            </div>
+            <span class="card-text" data-dislikes>0</span>
+            <button class="sidebar-close-btn" type="button" title="알림">답글</button>
           </div>
         </div>
       </div>
