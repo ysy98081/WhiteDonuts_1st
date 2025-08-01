@@ -3,17 +3,17 @@
 ================================ */
 .columns {
   display: grid;
-  grid-template-columns: 2fr 1fr;  /* 좌우 비율 */
+  grid-template-columns: 2fr 400px;  /* 좌우 비율 */
   grid-template-areas: /* layout 배치 */
     "primary secondary"
     "comment secondary";
-  padding: 16px;
+  padding: 20px;
   margin-top: 60px;
 }
 
 .primary {
   grid-area: primary;
-  min-width: 600px; /* 유지 */
+  min-width: 400px; /* 유지 */
 }
 
 .secondary {
@@ -24,7 +24,6 @@
   grid-area: comment;
 }
 
-/* 반응형 처리 */
 @media (max-width: 1000px) {
   .columns {
     grid-template-columns: 1fr;
@@ -35,12 +34,40 @@
   }
 
   .primary,
-  .secondary,
   .comment {
     width: 100%;
   }
 }
 
+.video-container {
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.card-img-top {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+@media (min-width: 992px) {
+  .video-container {
+    width: 200px;
+  }
+
+  .video-container-text {
+    width: 150px;
+  }
+
+  .card-img-top {
+    width: 200px;
+    height: auto;
+  }
+
+  .secondary {
+    max-height: 120px; /* 필요 시 조절 가능 */
+  }
+}
 
 
 /* ================================
@@ -119,7 +146,7 @@
   min-width: 280px;
 }
 
-.secondary-video-scroll .card {
+.secondary-video-scroll .card-template {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -129,7 +156,7 @@
   margin-bottom: 10px;
 }
 
-.secondary-video-scroll .card:hover {
+.secondary-video-scroll .card-template:hover {
   transform: scale(1.01);
 }
 
@@ -183,13 +210,6 @@
 /* ================================
    아이콘 (프로필 등)
 ================================ */
-.card-icon {
-  border-radius: 50%;
-  width: 40px;
-  background: none;
-  border: none;
-}
-
 .comment-icon {
   display: flex; /* 가운데 정렬을 위한 핵심 */
   align-items: center; /* 수직 정렬 */

@@ -100,8 +100,20 @@ thumdownBtn.addEventListener('click', () => {
 
 const messageInput = document.getElementById("messageInput");
 const addCommentBtn = document.getElementById("addCommentBtn");
+const cancelCommentBtn = document.getElementById("cancelCommentBtn");
 const commentContainer = document.getElementById("comment-container");
 const commentTemplate = document.getElementById("comment-template");
+
+// 댓글 등록 버튼
+messageInput.addEventListener("focus", function() {
+  addCommentBtn.style.display = "inline-block";
+  cancelCommentBtn.style.display = "inline-block";
+});
+// 댓글 취소 버튼
+cancelCommentBtn.addEventListener("focus", function() {
+  addCommentBtn.style.display = "none";
+  cancelCommentBtn.style.display = "none";
+});
 
 // 댓글 추가 함수
 function addComment() {
@@ -215,3 +227,4 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     .catch(err => console.error("JSON 로딩 실패:", err));
 });
+

@@ -3,6 +3,7 @@ html, body {
   overflow-x: hidden;
   font-family: "Roboto","Arial",sans-serif;
   font-size: 15px;
+  min-width: 300px;
 }
 
 body.modal-open {
@@ -46,8 +47,8 @@ body.modal-open {
 
 .sidebar-slide {
   position: fixed;
-  left: -280px;
-  width: 280px;
+  left: -250px;
+  width: 250px;
   height: 100%;
   background-color: #ffffff;
   transition: left 0.3s ease;
@@ -153,6 +154,13 @@ body.modal-open {
   height: 80px;
 }
 
+.card-icon {
+  border-radius: 50%;
+  width: 40px;
+  background: none;
+  border: none;
+}
+
 /* ===== 입력창 / 버튼 ===== */
 .non-btn{
   background: none;
@@ -219,6 +227,12 @@ body.modal-open {
   height: 40px;
 }
 
+/* 동영상 hover */
+.video-container {
+  position: relative;
+  overflow: hidden;
+}
+
 /* ===== 유틸 클래스 ===== */
 
 /* 밑줄 제거 */
@@ -240,3 +254,4 @@ body.modal-open {
 .button-img{
   margin-right: 20px;
 }
+

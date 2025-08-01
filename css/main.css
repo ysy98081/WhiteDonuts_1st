@@ -59,18 +59,7 @@
   color: #909090;
 }
 
-.card-icon{
-  border-radius: 50%;
-  width: 40px;
-  background: none;
-  border: none;
-}
 
-/* 동영상 hover */
-.video-container {
-  position: relative;
-  overflow: hidden;
-}
 
 .card-img-top {
   width: 100%;

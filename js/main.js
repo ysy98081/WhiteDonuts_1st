@@ -1,8 +1,8 @@
 fetch("data/index.json")
   .then(res => res.json())
   .then(data => {
-    const container = document.getElementById("video-list");
-    const template = document.getElementById("card-template");
+    const container = document.getElementById("main-video-list");
+    const template = document.getElementById("main-card-template");
 
     data.forEach(video => {
       const card = template.cloneNode(true);
