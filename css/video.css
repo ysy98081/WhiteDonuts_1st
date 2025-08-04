@@ -183,27 +183,10 @@
 /* ================================
    텍스트 스타일
 ================================ */
-.card-title {
-  font-family: "Roboto", "Arial", sans-serif;
-  font-size: 1rem;
-  margin-bottom: 4px;
-}
-
 .card-text {
-  font-family: "Roboto", "Arial", sans-serif;
   font-size: 0.80rem;
   color: #909090;
   margin: 0;
-}
-
-/* 타이틀 2줄이상 줄임*/
-.line-clamp {
-  display: -webkit-box;
-  -webkit-line-clamp: 2;       /* 최대 2줄 */
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  word-break: break-word;
 }
 
 

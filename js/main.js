@@ -1,15 +1,31 @@
+// 검색어 파라미터 읽기
+const params = new URLSearchParams(window.location.search);
+const searchKeyword = params.get("search")?.toLowerCase() || "";
+
 fetch("data/index.json")
   .then(res => res.json())
   .then(data => {
     const container = document.getElementById("main-video-list");
     const template = document.getElementById("main-card-template");
 
-    data.forEach(video => {
+    // 검색 필터링
+    const filteredData = searchKeyword
+      ? data.filter(video =>
+        video.title.toLowerCase().includes(searchKeyword) ||
+        video.uploader.toLowerCase().includes(searchKeyword) ||
+        (video.subject && video.subject.toLowerCase().includes(searchKeyword))
+      )
+      : data;
+
+    // 기존 내용 제거
+    container.innerHTML = "";
+
+    // 카드 렌더링
+    filteredData.forEach(video => {
       const card = template.cloneNode(true);
       card.removeAttribute("id");
       card.style.display = "";
 
-      // 정보 채우기
       card.querySelector("a").href = "html/video.html?id=" + video.videoId;
       card.querySelector("[data-thumbnail]").src = `https://img.youtube.com/vi/${video.videoId}/mqdefault.jpg`;
       card.querySelector("[data-icon]").src = video.icon;
@@ -17,7 +33,6 @@ fetch("data/index.json")
       card.querySelector("[data-uploader]").textContent = video.uploader;
       card.querySelector("[data-meta]").textContent = `조회수 ${video.views} • ${video.uploadDate}`;
 
-      // iframe hover 로직
       const wrapper = card.querySelector("[data-iframe]");
       const videoCard = card.querySelector(".video-card");
 
@@ -28,7 +43,7 @@ fetch("data/index.json")
         iframe.setAttribute("allowfullscreen", "");
         iframe.style.width = "100%";
         iframe.style.height = "100%";
-        wrapper.innerHTML = ""; // 중복 방지
+        wrapper.innerHTML = "";
         wrapper.appendChild(iframe);
       });
 
@@ -40,3 +55,6 @@ fetch("data/index.json")
     });
   })
   .catch(err => console.error("JSON 로딩 실패:", err));
+
+// 검색버튼 눌렀을 때 index.html로 이동 (검색 기능)
+

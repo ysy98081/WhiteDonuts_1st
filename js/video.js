@@ -123,7 +123,6 @@ function addComment() {
   const newComment = commentTemplate.cloneNode(true);
   newComment.removeAttribute("id");
   newComment.classList.remove("comment-template");
-  //newComment.style.display = "flex"; // 혹시 템플릿이 숨겨져 있다면 보이게
   newComment.style.height = "100px";
   newComment.classList.add("d-flex", "align-items-start");
 
@@ -176,6 +175,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         videoTitle.textContent = video.title;
+        videoTitle.setAttribute("title", video.title);
         videoIcon.src = video.icon;
         videoViews.textContent = "조회수 " + video.views;
         videoUploadDate.textContent = video.uploadDate;
