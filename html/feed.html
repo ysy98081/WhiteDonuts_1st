@@ -198,7 +198,6 @@
       <a class="main-navbar-item" href="#" title="내 페이지"><img src="../img/my.png"><br>내 페이지</a>
     </div>
 
-    <!-- 영상 썸네일 카드 영역 카드 8개 이상 -->
     <div class="main-video" style="padding-top: 30px;">
       <div class="main-video-button d-flex align-items-center justify-content-between" style="height: 60px;">
         <h5 class="fw-bolder">최신순</h5>
@@ -214,23 +213,25 @@
       </div>
 
       <div class="main-video-scroll row row-cols-1" id="video-list">
-        <div class="card col-lg-4 col-md-6" id="card-template" style="display: none;">
-          <a href="#" class="border-light video-card">
-            <div class="video-container">
-              <img src="" class="card-img-top" data-thumbnail>
-              <div class="iframe-wrapper" data-iframe></div>
-            </div>
-            <div class="card-body row">
-              <div class="col col-md-auto">
-                <img class="card-icon" src="" data-icon>
+        <div class="video-card-wrapper" id="card-template" style="display: none;">
+          <div class="card">
+            <a href="#" class="border-light video-card">
+              <div class="video-container">
+                <img src="" class="card-img-top" data-thumbnail>
+                <div class="iframe-wrapper" data-iframe></div>
               </div>
-              <div class="col">
-                <h5 class="card-title" data-title></h5>
-                <p class="card-text" data-uploader></p>
-                <p class="card-text" data-meta></p>
+              <div class="card-body row">
+                <div class="col col-md-auto">
+                  <img class="card-icon" src="" data-icon>
+                </div>
+                <div class="col">
+                  <h5 class="card-title" data-title></h5>
+                  <p class="card-text" data-uploader></p>
+                  <p class="card-text" data-meta></p>
+                </div>
               </div>
-            </div>
-          </a>
+            </a>
+          </div>
         </div>
       </div>
     </div>

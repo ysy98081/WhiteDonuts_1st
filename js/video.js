@@ -176,7 +176,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         videoTitle.textContent = video.title;
         videoTitle.setAttribute("title", video.title);
-        videoIcon.src = video.icon;
+        videoIcon.src = "../" + video.icon;
         videoViews.textContent = "조회수 " + video.views;
         videoUploadDate.textContent = video.uploadDate;
 

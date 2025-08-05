@@ -193,7 +193,7 @@
   <div class="row g-0">
     <!-- 왼쪽 사이드바 -->
     <div class="main-navbar">
-      <a class="main-navbar-item" onclick="location.reload()" title="홈"><img src="img/home.png"><br>홈</a>
+      <a class="main-navbar-item" href="index.html" title="홈"><img src="img/home.png"><br>홈</a>
       <a class="main-navbar-item" href="#" title="Shorts"><img src="img/shorts.png"><br>Shorts</a>
       <a class="main-navbar-item" href="html/feed.html" title="구독"><img src="img/subscriptions.png"><br>구독</a>
       <a class="main-navbar-item" href="#" title="내 페이지"><img src="img/my.png"><br>내 페이지</a>
@@ -215,23 +215,25 @@
       </div>
 
       <div class="main-video-scroll row row-cols-1" id="main-video-list">
-        <div class="card col-lg-4 col-md-6" id="main-card-template" style="display: none;">
-          <a href="#" class="border-light video-card">
-            <div class="video-container">
-              <img src="" class="card-img-top" data-thumbnail>
-              <div class="iframe-wrapper" data-iframe></div>
-            </div>
-            <div class="card-body row">
-              <div class="col col-md-auto">
-                <img class="card-icon" src="" data-icon>
+        <div class="video-card-wrapper" id="main-card-template" style="display: none;">
+          <div class="card">
+            <a href="#" class="border-light video-card">
+              <div class="video-container">
+                <img src="" class="card-img-top" data-thumbnail>
+                <div class="iframe-wrapper" data-iframe></div>
               </div>
-              <div class="col">
-                <h5 class="card-title" data-title></h5>
-                <p class="card-text" data-uploader></p>
-                <p class="card-text" data-meta></p>
+              <div class="card-body row">
+                <div class="col-auto">
+                  <img class="card-icon" src="" data-icon>
+                </div>
+                <div class="col">
+                  <h5 class="card-title" data-title></h5>
+                  <p class="card-text" data-uploader></p>
+                  <p class="card-text" data-meta></p>
+                </div>
               </div>
-            </div>
-          </a>
+            </a>
+          </div>
         </div>
       </div>
     </div>

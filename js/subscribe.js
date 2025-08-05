@@ -104,22 +104,6 @@ document.addEventListener("DOMContentLoaded", () => {
     renderCards(filtered);
   }
 
-  // 🔁 검색 버튼 클릭 시 index.html로 이동 (subscribe.html 포함 공통)
-  // if (searchButton && searchInput) {
-  //   searchButton.addEventListener("click", () => {
-  //     const keyword = searchInput.value.trim();
-  //     if (keyword) {
-  //       window.location.href = `../html/index.html?search=${encodeURIComponent(keyword)}`;
-  //     }
-  //   });
-  //
-  //   searchInput.addEventListener("keypress", (e) => {
-  //     if (e.key === "Enter") {
-  //       searchButton.click();
-  //     }
-  //   });
-  // }
-
   // 데이터 로딩
   fetch("../data/package.json")
     .then(res => res.json())
@@ -131,7 +115,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (video && iframe) {
           iframe.src = video.iframeurl;
           videoTitle.textContent = video.title;
-          videoIcon.src = video.icon;
+          videoIcon.src = "../" + video.icon;
           videoViews.textContent = "조회수 " + video.views;
           videoUploadDate.textContent = video.uploadDate;
           videoUploader.textContent = video.uploader;

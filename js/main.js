@@ -2,7 +2,7 @@
 const params = new URLSearchParams(window.location.search);
 const searchKeyword = params.get("search")?.toLowerCase() || "";
 
-fetch("data/index.json")
+fetch("data/package.json")
   .then(res => res.json())
   .then(data => {
     const container = document.getElementById("main-video-list");
@@ -28,7 +28,7 @@ fetch("data/index.json")
 
       card.querySelector("a").href = "html/video.html?id=" + video.videoId;
       card.querySelector("[data-thumbnail]").src = `https://img.youtube.com/vi/${video.videoId}/mqdefault.jpg`;
-      card.querySelector("[data-icon]").src = video.icon;
+      card.querySelector("[data-icon]").src = "../" + video.icon;
       card.querySelector("[data-title]").textContent = video.title;
       card.querySelector("[data-uploader]").textContent = video.uploader;
       card.querySelector("[data-meta]").textContent = `조회수 ${video.views} • ${video.uploadDate}`;
@@ -55,6 +55,3 @@ fetch("data/index.json")
     });
   })
   .catch(err => console.error("JSON 로딩 실패:", err));
-
-// 검색버튼 눌렀을 때 index.html로 이동 (검색 기능)
-

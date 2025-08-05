@@ -28,7 +28,7 @@ fetch("../data/package.json")
       // 카드 정보 채우기
       card.querySelector("a").href = "video.html?id=" + video.videoId;
       card.querySelector("[data-thumbnail]").src = `https://img.youtube.com/vi/${video.videoId}/mqdefault.jpg`;
-      card.querySelector("[data-icon]").src = video.icon;
+      card.querySelector("[data-icon]").src = "../" + video.icon;
       card.querySelector("[data-title]").textContent = video.title;
       card.querySelector("[data-uploader]").textContent = video.uploader;
       card.querySelector("[data-meta]").textContent = `조회수 ${video.views} • ${video.uploadDate}`;
