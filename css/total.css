@@ -1,5 +1,6 @@
 /* ===== 전체 페이지 스크롤 및 부드러운 이동 설정 ===== */
 html, body {
+  overflow-x: hidden;
   font-family: "Roboto","Arial",sans-serif;
   font-size: 15px;
   min-width: 300px;

@@ -76,7 +76,6 @@ thumupBtn.addEventListener('click', () => {
     }
     isThumbUp = true;
   }
-
   thumupNum.textContent = baseUp;
   thumdownNum.textContent = baseDown;
 });
@@ -93,7 +92,6 @@ thumdownBtn.addEventListener('click', () => {
     }
     isThumbDown = true;
   }
-
   thumupNum.textContent = baseUp;
   thumdownNum.textContent = baseDown;
 });
