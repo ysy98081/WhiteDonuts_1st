@@ -44,6 +44,33 @@
   border-radius: 10px;
 }
 
+/* ✅ 카드가 2개 이상일 때 (기본 3열, 반응형 포함) */
+.main-video-scroll:has(.video-card-wrapper:nth-child(2)) .video-card-wrapper {
+  flex: 1 1 calc(33.333% - 1rem);
+  max-width: calc(33.333% - 1rem);
+}
+
+@media (max-width: 992px) {
+  .main-video-scroll:has(.video-card-wrapper:nth-child(2)) .video-card-wrapper {
+    flex: 1 1 calc(50% - 1rem);
+    max-width: calc(50% - 1rem);
+  }
+}
+
+@media (max-width: 768px) {
+  .main-video-scroll:has(.video-card-wrapper:nth-child(2)) .video-card-wrapper {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
+
+/* ✅ 카드가 1개일 때는 무조건 100% */
+.main-video-scroll:not(:has(.video-card-wrapper:nth-child(2))) .video-card-wrapper {
+  flex: 1 1 100%;
+  max-width: 100%;
+}
+
+
 /* ===== UI 컴포넌트 ===== */
 .card-img-top {
   width: 100%;
