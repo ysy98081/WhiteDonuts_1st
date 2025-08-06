@@ -217,9 +217,18 @@
    버튼
 ================================ */
 .subscribe-btn {
+  background-color: #f8f9fa;
+  border: 1px solid #f8f9fa;
   border-radius: 40px;
-  border: none;
-  width: 60px;
+  width: 150px;
+  height: 40px;
+}
+
+.subscribe-btn:hover {
+  background-color: #e1e1e1;
+  border: 1px solid #e1e1e1;
+  border-radius: 40px;
+  width: 150px;
   height: 40px;
 }
 
@@ -279,4 +288,8 @@
 
 .comment-line{
   white-space: pre-line; /* 줄바꿈 유지 */
+}
+
+.dropdown-item{
+  text-align: start;
 }

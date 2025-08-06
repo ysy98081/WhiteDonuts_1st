@@ -17,7 +17,7 @@
       <div class="container-fluid d-flex flex-nowrap align-items-center justify-content-between">
         <div class="d-flex align-items-center flex-shrink-0">
           <button class="sidebar-close-btn" type="button" id="toggleSidebar">
-            <span class="toggler-icon"><img src="../img/menu.png" alt="" style="height: 35px;"></span>
+            <span class="toggler-icon"><img src="../img/menu.png" alt=""></span>
           </button>
           <a class="navbar-brand mb-0" href="#section1">
             <img src="../img/logo.png" alt="Logo" style="height: 30px;">
@@ -61,7 +61,7 @@
     <ul class="nav flex-column">
       <li class="nav-item d-flex align-items-center px-2">
         <button type="button" id="closeSidebarBtn" class="sidebar-close-btn">
-          <span class="toggler-icon"><img src="../img/menu.png" alt="" style="height: 35px;"></span>
+          <span class="toggler-icon"><img src="../img/menu.png" alt=""></span>
         </button>
         <a class="navbar-brand mb-0" href="../index.html">
           <img src="../img/logo.png" alt="Logo" style="height: 30px;">
@@ -135,7 +135,7 @@
 <div class="modal fade" id="userInfoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
      aria-hidden="true">
   <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document"
-       style="float: right; width: 350px; padding-top: 25px">
+       style="float: right; width: 300px; padding-top: 25px">
     <div class="modal-content">
       <div class="modal-header" style="border: 0;">
         <div class="col col-md-auto" style="padding-right: 20px;">
@@ -221,7 +221,19 @@
                 <p class="card-text" id="youtube-subs"></p>
               </a>
             </div>
-            <button class="btn btn-dark subscribe-btn" type="button">구독</button>
+            <div class="dropdown">
+              <button class="btn subscribe-btn" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="../img/alarm.png" id="dropdownalarm" alt="" style="padding-right: 5px">
+                구독중
+                <img src="../img/check.png" alt="" style="padding-left: 10px">
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" >
+                <li><a class="dropdown-item d-flex align-items-center" href="#" data-icon="../img/blackalarm.png"><img src="../img/blackalarm.png" alt="">전체</a></li>
+                <li><a class="dropdown-item d-flex align-items-center" href="#" data-icon="../img/alarm.png"><img src="../img/alarm.png" alt="">맞춤설정</a></li>
+                <li><a class="dropdown-item d-flex align-items-center" href="#" data-icon="../img/alarm_off.png"><img src="../img/alarm_off.png" alt="">없음</a></li>
+                <li><a class="dropdown-item d-flex align-items-center" href="#" data-icon="../img/person_remove.png"><img src="../img/person_remove.png" alt="">구독 취소</a></li>
+              </ul>
+            </div>
           </div>
           <div class="d-flex align-items-center flex-wrap gap-2 flex-shrink-0">
             <div class="d-flex align-items-center">
@@ -321,7 +333,8 @@
               <img src="../img/thumb_down.png" title="싫어요">
             </div>
             <span class="card-text" data-dislikes>0</span>
-            <button class="sidebar-close-btn" type="button" title="답글">답글</button>
+            <button class="sidebar-close-btn" type="button" title="답글" data-Comment>답글</button>
+            <button class="sidebar-close-btn" type="button" title="삭제" data-delete>삭제</button>
           </div>
         </div>
       </div>

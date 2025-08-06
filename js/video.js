@@ -111,6 +111,7 @@ messageInput.addEventListener("focus", function() {
 cancelCommentBtn.addEventListener("focus", function() {
   addCommentBtn.style.display = "none";
   cancelCommentBtn.style.display = "none";
+  messageInput.value = "";
 });
 
 // 댓글 추가 함수
@@ -144,6 +145,34 @@ messageInput.addEventListener("keydown", (e) => {
     addComment();
   }
 });
+
+commentContainer.addEventListener("click", (e) => {
+  if (e.target.matches("[data-Comment]")) {
+    e.preventDefault();
+    addComment();
+  }
+
+  if (e.target.matches("[data-delete]")) {
+    if(confirm("삭제하시겠습니까?")){
+      const commentElement = e.target.closest(".channel-text");
+      if (commentElement) {
+        commentElement.remove();
+      }
+    }
+  }
+});
+
+const dropdownItems = document.querySelectorAll(".dropdown-item");
+const dropdownalarm = document.getElementById("dropdownalarm");
+
+dropdownItems.forEach(item => {
+  item.addEventListener("click", (e) => {
+    e.preventDefault();
+    const icon = item.getAttribute("data-icon");
+    dropdownalarm.src = icon;
+  });
+});
+
 
 document.addEventListener("DOMContentLoaded", () => {
   const params = new URLSearchParams(window.location.search);
